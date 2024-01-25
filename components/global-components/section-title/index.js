@@ -1,0 +1,48 @@
+export default function SectionTitle({
+  children,
+  isWhite,
+  isAlignedLeft,
+  isNotUppercase,
+}) {
+  return (
+    <div
+      className={` mb-6 flex flex-col ${
+        !isAlignedLeft && "justify-center items-center"
+      } gap-2`}
+    >
+      {/* <p
+        className={`${
+          isWhite ? "text-white" : "text-primaryBlue"
+        } text-lg my-0`}
+      >
+        PTSPS
+      </p> */}
+
+      {isNotUppercase ? (
+        <h3
+          className={`mt-0 mb-0 text-slate-800 ${
+            isAlignedLeft ? "text-left" : "text-center"
+          } ${isWhite && "text-white"}`}
+        >
+          {" "}
+          {children}
+        </h3>
+      ) : (
+        <h2
+          className={`uppercase font-semibold ${
+            isAlignedLeft ? "text-left" : "text-center"
+          } ${isWhite && "text-white"}`}
+        >
+          {" "}
+          {children}
+        </h2>
+      )}
+
+      <div
+        className={`mt-4 w-20 h-1 rounded-sm ${
+          isWhite ? "bg-white" : "bg-primaryBlue"
+        }`}
+      />
+    </div>
+  );
+}

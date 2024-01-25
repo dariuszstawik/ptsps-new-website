@@ -1,0 +1,186 @@
+const navbarData = [
+  {
+    id: 1,
+    title: "Start",
+    path: "/",
+    isVisible: true,
+  },
+  {
+    id: 2,
+    title: "Organizacja",
+    path: "/organizacja/o-nas",
+    isVisible: true,
+    submenu: [
+      {
+        id: 1,
+        title: "O nas",
+        path: "/organizacja/o-nas",
+        isVisible: true,
+      },
+      {
+        id: 2,
+        title: "Historia",
+        path: "/organizacja/historia",
+        isVisible: true,
+      },
+      {
+        id: 3,
+        title: "Struktura",
+        path: "/organizacja/struktura",
+        isVisible: false,
+      },
+      {
+        id: 4,
+        title: "Dokumenty",
+        path: "/organizacja/dokumenty",
+        isVisible: true,
+      },
+      {
+        id: 5,
+        title: "Współpraca",
+        path: "/organizacja/wspolpraca",
+        isVisible: false,
+      },
+      {
+        id: 6,
+        title: "Ludzie organizacji",
+        path: "/organizacja/ludzie-organizacji",
+        isVisible: true,
+      },
+      {
+        id: 7,
+        title: "PSEA",
+        path: "/organizacja/psea",
+        isVisible: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Projekty",
+    path: "/projekty",
+    isVisible: true,
+    submenu: [
+      {
+        id: 1,
+        title: "UNICEF 2022-2024",
+        path: "/projekty/unicef-2022-2024",
+        isVisible: true,
+      },
+      {
+        id: 2,
+        title: "Kodeks etyczny",
+        path: "/projekty/kodeks-etyczny",
+        isVisible: false,
+      },
+      {
+        id: 3,
+        title: "Konferencja",
+        path: "/projekty/konferencja",
+        isVisible: false,
+      },
+      {
+        id: 4,
+        title: "Kampania",
+        path: "/projekty/kampania",
+        isVisible: false,
+      },
+      // {
+      //   id: 5,
+      //   title: "Kampania",
+      //   path: "/projekty/kampania",
+      // },
+      {
+        id: 5,
+        title: "Circle Study",
+        path: "/projekty/circle-study",
+        isVisible: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Superwizja",
+    path: "/superwizja",
+    isVisible: false,
+    submenu: [
+      {
+        id: 1,
+        title: "Czym jest superwizja pracy socjalnej?",
+        path: "/superwizja/czym-jest-superwizja-pracy-socjalnej",
+        isVisible: true,
+      },
+      {
+        id: 2,
+        title: "Jak wprowadzić superwizję do organizacji?",
+        path: "/superwizja/jak-wprowadzic-superwizje-do-organizacji",
+        isVisible: true,
+      },
+      {
+        id: 3,
+        title: "Jak finansować superwizję?",
+        path: "/superwizja/jak-finansowac-superwizje",
+        isVisible: true,
+      },
+      {
+        id: 4,
+        title: "Standardy superwizji",
+        path: "/superwizja/standardy-superwizji",
+        isVisible: true,
+      },
+      {
+        id: 5,
+        title: "Lista superwizorów pracy socjalnej",
+        path: "/superwizja/lista-superwizorow-pracy-socjalnej",
+        isVisible: true,
+      },
+      {
+        id: 6,
+        title:
+          "Lista superwizorów niecertyfikowanych i metodyków pracy socjalnej",
+        path: "/superwizja/lista-superwizorow-niecertyfikowanych-i-metodykow-pracy-socjalnej",
+        isVisible: true,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Biblioteka",
+    path: "/biblioteka",
+    isVisible: true,
+  },
+  {
+    id: 6,
+    title: "Oferta",
+    path: "/oferta",
+    isVisible: false,
+    submenu: [
+      {
+        id: 1,
+        title: "Superwizja",
+        path: "/oferta/oferta-superwizja",
+        isVisible: true,
+      },
+      {
+        id: 2,
+        title: "Szkoolenia",
+        path: "/oferta/szkolenia",
+        isVisible: true,
+      },
+      {
+        id: 3,
+        title: "Study circle",
+        path: "/oferta/study-circle",
+        isVisible: true,
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Kontakt",
+    path: "/kontakt",
+    isVisible: true,
+  },
+];
+
+export default navbarData;
