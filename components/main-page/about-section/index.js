@@ -5,6 +5,8 @@ import { Lightbulb, Milestone } from "lucide-react";
 import { Slide } from "react-awesome-reveal";
 
 export default function AboutSection() {
+  let nbsp = "\u00A0";
+
   return (
     <section className="mx-6">
       <SectionTitle>O nas</SectionTitle>
@@ -14,8 +16,8 @@ export default function AboutSection() {
             {/* <Milestone /> */}
             <Lightbulb className="w-12 h-12 text-primaryBlue" />
             <h4 className="text-white font-semibold">
-              Misją PTSPS jest propagowanie idei superwizji pracy socjalnej i
-              profesjonalizacja pomocy społecznej.
+              Misją PTSPS jest propagowanie idei superwizji pracy socjalnej
+              i&nbsp;profesjonalizacja pomocy społecznej.
             </h4>
           </Slide>
         </div>

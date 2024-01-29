@@ -36,8 +36,8 @@ export default function HeroSliderSection() {
         img="/onas3.jpg"
       >
         Wspieramy pracowników socjalnych poprzez superwizje i szkolenia, tak aby
-        mogli efektywnie pomagać osobom z Ukrainy, które schroniły się w naszym
-        kraju.
+        mogli efektywnie pomagać osobom z&nbsp;Ukrainy, które schroniły się w
+        naszym kraju.
       </HeroSlide>
 
       <HeroSlide
