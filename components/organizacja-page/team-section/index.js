@@ -6,7 +6,7 @@ import ListItem from "@/components/global-components/list-item";
 export const TeamSection = () => {
   return (
     <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-10 pb-20">
-      <img src="/wspolne.jpg" className="w-full mb-20" />
+      <img src="/stowarzyszenie.jpg" className="w-full mb-20" />
       <div className=" mb-16 mt-10">
         <SectionSubtitle>Zarząd Stowarzyszenia</SectionSubtitle>
       </div>
