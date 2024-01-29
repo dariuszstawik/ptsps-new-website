@@ -22,9 +22,9 @@ module.exports = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
-        // darkBlue: "#2973B8",
+        darkBlue: "#2973B8",
         logoBlue: "#004aad",
-        darkBlue: "#01445E",
+        // darkBlue: "#01445E",
         primaryBlue: "#1cabe2",
         primaryYellow: "#e2c11c",
         primaryOrange: "#f06128",
