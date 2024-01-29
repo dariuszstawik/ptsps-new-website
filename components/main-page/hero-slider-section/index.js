@@ -19,7 +19,7 @@ export default function HeroSliderSection() {
   };
   return (
     <Slider {...settingsLg}>
-      <HeroSlide
+      {/* <HeroSlide
         title="PTSPS"
         buttonTitle="Poznaj nas"
         buttonHref="/organizacja/o-nas"
@@ -27,7 +27,7 @@ export default function HeroSliderSection() {
       >
         Polskie Towarzystwo Superwizji Pracy Socjalnej działa od 2015 roku na
         rzecz profesjonalizacji pomocy społecznej.
-      </HeroSlide>
+      </HeroSlide> */}
 
       <HeroSlide
         title="Unicef 2022-2024"
