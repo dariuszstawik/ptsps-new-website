@@ -3,8 +3,10 @@ import FullwidthParagraphWithImageOnLeft from "@/components/global-components/fu
 import ParagraphWithImageOnTheLeft from "@/components/global-components/paragraph-with-image-on-the-left";
 import SectionTitle from "@/components/global-components/section-title";
 import TestimonialsCarousel from "@/components/global-components/testimonial-carousel";
+import AboutSection from "@/components/main-page/about-section";
 import CounterSection from "@/components/main-page/counter-section";
 import HeroSection from "@/components/main-page/hero-section";
+import HeroSliderSection from "@/components/main-page/hero-slider-section";
 import NewsCard from "@/components/main-page/news-card";
 import ProjectsSection from "@/components/main-page/projects-section";
 import Testimonials from "@/components/main-page/testimonials";
@@ -14,11 +16,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <HeroSection />
-      <div className="my-10 px-4 md:hidden">
+      {/* <HeroSection /> */}
+      <HeroSliderSection />
+      {/* <div className="my-10 px-4 md:hidden">
         <NewsCard />
-      </div>
+      </div> */}
       <div className="mb-32">
+        <AboutSection />
         <CounterSection />
       </div>
       {/* <ProjectsSection /> */}
