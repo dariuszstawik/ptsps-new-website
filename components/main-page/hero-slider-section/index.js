@@ -22,7 +22,7 @@ export default function HeroSliderSection() {
       <HeroSlide
         title="PTSPS"
         buttonTitle="Poznaj nas"
-        buttonLink="/organizacja/o-nas"
+        buttonHref="/organizacja/o-nas"
         img="/onas5.jpg"
       >
         Polskie Towarzystwo Superwizji Pracy Socjalnej działa od 2015 roku na
@@ -32,7 +32,7 @@ export default function HeroSliderSection() {
       <HeroSlide
         title="Unicef 2022-2024"
         buttonTitle="Więcej o projekcie"
-        buttonLink="/projekty/unicef-2022-2024"
+        buttonHref="/projekty/unicef-2022-2024"
         img="/onas3.jpg"
       >
         Wspieramy pracowników socjalnych poprzez superwizje i szkolenia, tak aby
@@ -43,7 +43,7 @@ export default function HeroSliderSection() {
       <HeroSlide
         title="Biblioteka"
         buttonTitle="Zobacz więcej"
-        buttonLink="/biblioteka"
+        buttonHref="/biblioteka"
         img="/onas4.jpg"
       >
         Pobierz bezpłatnie ostatnie numery magazynu "SPS: Superwizja Pracy

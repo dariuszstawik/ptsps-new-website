@@ -7,7 +7,7 @@ export default function HeroSlide({
   title,
   children,
   buttonTitle,
-  buttonLink,
+  buttonHref,
   img,
 }) {
   return (
@@ -25,7 +25,7 @@ export default function HeroSlide({
           {children}
         </h2>
 
-        <Link href={buttonLink}>
+        <Link href={buttonHref}>
           <Button>{buttonTitle}</Button>
         </Link>
         {/* </Slide> */}
