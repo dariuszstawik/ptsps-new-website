@@ -1,7 +1,12 @@
-export default function SectionSubtitle({ children, isWhite, isAlignedLeft }) {
+export default function SectionSubtitle({
+  children,
+  isWhite,
+  isAlignedLeft,
+  className,
+}) {
   return (
     <div
-      className={`mt-0 mb-2 pl-2 flex flex-col ${
+      className={`mt-0 mb-2 pl-2 flex flex-col ${className} ${
         !isAlignedLeft && "justify-center items-center"
       } gap-2`}
     >
