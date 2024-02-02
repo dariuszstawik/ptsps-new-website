@@ -98,6 +98,10 @@
     @apply antialiased my-3;
   }
 
+  blockquote {
+    @apply font-semibold italic;
+  }
+
   /* article strong {
     @apply text-primaryBlue;
   } */

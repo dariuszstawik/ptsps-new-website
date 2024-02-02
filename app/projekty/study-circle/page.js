@@ -1,4 +1,6 @@
 "use client";
+import ArticleSubtitle from "@/components/global-components/article-subtitle";
+import ArticleSubtitle2 from "@/components/global-components/article-subtitle2";
 import PageHeader from "@/components/global-components/page-header";
 import SectionSubtitle from "@/components/global-components/section-subtitle";
 import SingleArticle from "@/components/global-components/single-article";
@@ -79,9 +81,7 @@ export default function StudyCircle() {
           grupy Study Circle opierają się na wspólnym wysiłku uczestników, by
           zdobyć wiedzę na dany temat i wypracować nowe pomysły.
         </p>
-        <SectionSubtitle isAlignedLeft className="pl-0 -ml-2 mt-4 mb-6">
-          Nasz samouczący się krąg
-        </SectionSubtitle>
+        <ArticleSubtitle>Nasz samouczący się krąg</ArticleSubtitle>
         <p>
           Obszarem zainteresowania naszego Study Circle jest praca socjalna i
           superwizja pracy socjalnej. Nasz samouczący się krąg roboczo
@@ -110,7 +110,7 @@ export default function StudyCircle() {
           Zapraszamy do udziału w cyklicznych, comiesięcznych spotkaniach grupy.
           Maksymalna ilość uczestników to 10 osób. Liczy się kolejność zgłoszeń.
         </p>
-        <h4 className="mt-6">Przebieg spotkania</h4>
+        <h4 className="mt-8">Przebieg spotkania</h4>
         <p>
           Każde spotkanie w koleżeńskim kręgu superwizyjnym składa się z trzech
           części:
@@ -136,7 +136,7 @@ export default function StudyCircle() {
           rzeczywistości, wymiana myśli i emocji, ustalenia organizacyjne, wizje
           rozwojowe).
         </p>
-        <h4 className="mt-6">Koszty</h4>
+        <ArticleSubtitle2>Koszty</ArticleSubtitle2>
         <p>
           Opłata za uczestnictwo w samorozwojowej grupie hiperwizyjnej podlega
           tak zwanej “ekonomii daru”. Po zakończeniu spotkania można wpłacić

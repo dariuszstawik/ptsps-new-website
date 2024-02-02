@@ -2,13 +2,21 @@ import Link from "next/link";
 import SectionTitle from "../section-title";
 import SectionSubtitle from "../section-subtitle";
 
-export default function SideMenu({ itemsList, isBlue, className }) {
+export default function SideMenu({
+  title,
+  itemsList,
+  img,
+  alt,
+  isBlue,
+  className,
+}) {
   return (
     <div className={`mb-10 mt-6 flex flex-col gap-6 ${className}`}>
-      <img src="/unicef-logo.png" alt="unicef-logo" className="" />
+      {img && <img src={img} alt={alt ? alt : ""} className="" />}
+
       <div className="-mb-2">
         {/* <h3 className="pl-2 text-slate-800 pb-0 mb-0">Więcej o projekcie</h3> */}
-        <SectionSubtitle isAlignedLeft>Więcej o projekcie</SectionSubtitle>
+        <SectionSubtitle isAlignedLeft>{title}</SectionSubtitle>
         {/* <SectionTitle isAlignedLeft>Więcej o projekcie</SectionTitle> */}
       </div>
       <ul
