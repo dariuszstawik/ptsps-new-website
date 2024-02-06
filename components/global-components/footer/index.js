@@ -58,7 +58,7 @@ export default function Footer() {
                   <h5 className="mb-4 font-bold">Bezpieczny kontakt</h5>
                   <p className="leading-loose my-0">Aneta Zborowska</p>
                   <p className="leading-loose my-0">osobazaufania@ptsps.pl </p>
-                  <p className="leading-loose my-0">+48 500 273 018</p>
+                  <p className="leading-loose my-0">+48 732 988 806</p>
                 </div>
               </div>
             </div>

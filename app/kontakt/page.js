@@ -86,7 +86,7 @@ export default function Kontakt() {
                 <div className="flex gap-2">
                   <Mail className="text-primaryBlue w-5" />{" "}
                   osobazaufania@ptsps.pl
-                  <Phone className="text-primaryBlue w-4" /> +48 500 273 018
+                  <Phone className="text-primaryBlue w-4" /> +48 732 988 806
                 </div>
               </div>
             </div>

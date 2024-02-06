@@ -11,6 +11,7 @@ import NewsCard from "@/components/main-page/news-card";
 import ProjectsSection from "@/components/main-page/projects-section";
 import Testimonials from "@/components/main-page/testimonials";
 import { TeamSection } from "@/components/organizacja-page/team-section";
+import SupervisorsMap from "@/components/superwizja-page/supervisors-map";
 import Image from "next/image";
 
 export default function Home() {
@@ -87,6 +88,7 @@ export default function Home() {
         osiemdziesięciu grup pracowników w największych miastach – skupiskach
         migrantów z Ukrainy. */}
         </ParagraphWithImageOnTheLeft>
+        {/* <SupervisorsMap /> */}
       </section>
     </div>
   );

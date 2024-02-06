@@ -1,3 +1,4 @@
+"use client";
 import ArticleSubtitle from "@/components/global-components/article-subtitle";
 import ArticleSubtitle2 from "@/components/global-components/article-subtitle2";
 import PageHeader from "@/components/global-components/page-header";
@@ -34,7 +35,7 @@ export default function Superwizja() {
               W rodzimej literaturze można znaleźć kilka zbieżnych ze sobą
               pojęć:
             </p>
-            <p>
+            <div as p className="my-3">
               <blockquote>
                 „Superwizja to proces uczenia się i ciągłego rozwoju zawodowego
                 służący wzmacnianiu profesjonalnych kompetencji poprzez
@@ -45,8 +46,8 @@ export default function Superwizja() {
                 umożliwiający praktykom refleksję nad jakością swej pracy”
               </blockquote>
               (Łuczyńska, Olech 2013)
-            </p>
-            <p>
+            </div>
+            <div as p className="my-3">
               <blockquote>
                 „Superwizja pracy socjalnej to specyficzny proces uczenia się, w
                 którym pracownik socjalny lub inna osoba realizująca pracę
@@ -58,13 +59,13 @@ export default function Superwizja() {
                 grupą superwizyjną”
               </blockquote>
               (Domaradzki, Krzyszkowski, Sosnowski, Włoch, 2017)
-            </p>
+            </div>
             <p>
               Superwizja pracy socjalnej w Polsce czerpie z doświadczeń
               superwizji w psychoterapii. Definicje zagraniczne z obszaru
               psychoterapii wskazują na istotę superwizji:
             </p>
-            <p>
+            <div as p className="my-3">
               <blockquote>
                 „Superwizja jest to szczególny rodzaj interakcji pomiędzy
                 specjalistami w danej dziedzinie pomagania, której partnerzy
@@ -74,8 +75,8 @@ export default function Superwizja() {
                 klientami”
               </blockquote>
               (Worthington)
-            </p>
-            <p>
+            </div>
+            <div as p className="my-3">
               <blockquote>
                 „Superwizja jest procesem uczenia się, w którym psychoterapeuta
                 współpracuje z bardziej doświadczonym kolegą po fachu, by w
@@ -84,7 +85,7 @@ export default function Superwizja() {
                 zapewnia mu bezpieczeństwo”
               </blockquote>
               (Gilbert, Evans, 2004)
-            </p>
+            </div>
             <ArticleSubtitle>
               Superwizja w pracy socjalnej to rodzaj systemowego wspierania
             </ArticleSubtitle>
@@ -158,14 +159,6 @@ export default function Superwizja() {
               title: "Standardy superwizji",
               path: "/superwizja/standardy-superwizji",
             },
-            // {
-            //   title: "Realizacja: programy",
-            //   path: "/projekty/unicef-2022-2024/realizacja-programy",
-            // },
-            // {
-            //   title: "Realizacja: szkolenia",
-            //   path: "/projekty/unicef-2022-2024/realizacja-szkolenia",
-            // },
           ]}
         />
       </section>

@@ -162,6 +162,7 @@ export default function Unicef20222024() {
         </div>
         <SideMenu
           // isBlue
+          title="Więcej o projekcie"
           className="lg:mt-28"
           itemsList={[
             {
