@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getContentfulArticles(slug) {
+async function getContentfulArticle(slug) {
   const resArticles = await client.getEntries({
     content_type: "supervisionArticle",
     "fields.slug": slug,
@@ -21,13 +21,22 @@ async function getContentfulArticles(slug) {
   return resArticles.items[0];
 }
 
+async function getContentfulArticles() {
+  const resArticles = await client.getEntries({
+    content_type: "supervisionArticle",
+  });
+
+  return resArticles.items;
+}
+
 export default async function SupervisionArticle({ params }) {
   const { slug } = params;
 
-  const supervisionArticle = await getContentfulArticles(slug);
+  const supervisionArticle = await getContentfulArticle(slug);
+  const supervisionArticles = await getContentfulArticles();
 
   console.log("--------------");
-  console.log(supervisionArticle);
+  console.log(supervisionArticles);
 
   return (
     <div>
@@ -57,24 +66,29 @@ export default async function SupervisionArticle({ params }) {
           //   isBlue
           title="Więcej o superwizji"
           className="lg:mt-28"
-          itemsList={[
-            {
-              title: "Czym jest superwizja pracy socjalnej?",
-              path: "",
-            },
-            {
-              title: "Jak wprowadzić superwizję do organizacji?",
-              path: "/superwizja/jak-wprowadzic-superwizje-do-organizacji",
-            },
-            {
-              title: "Jak finansować superwizję?",
-              path: "/superwizja/jak-finansowac-superwizje?",
-            },
-            {
-              title: "Standardy superwizji",
-              path: "/superwizja/standardy-superwizji",
-            },
-          ]}
+          itemsList={supervisionArticles.map((article) => ({
+            title: article.fields.title,
+            path: `/superwizja/${article.fields.slug}`,
+            order: article.fields.order,
+          }))}
+          // itemsList={[
+          //   {
+          //     title: "Czym jest superwizja pracy socjalnej?",
+          //     path: "",
+          //   },
+          //   {
+          //     title: "Jak wprowadzić superwizję do organizacji?",
+          //     path: "/superwizja/jak-wprowadzac-superwizje-do-organizacji",
+          //   },
+          //   {
+          //     title: "Jak finansować superwizję?",
+          //     path: "/superwizja/jak-finansowac-superwizje?",
+          //   },
+          //   {
+          //     title: "Standardy superwizji",
+          //     path: "/superwizja/standardy-superwizji",
+          //   },
+          // ]}
         />
       </section>
     </div>

@@ -163,6 +163,7 @@ export default function Unicef20222024() {
         <SideMenu
           // isBlue
           title="Więcej o projekcie"
+          img="/unicef-logo.png"
           className="lg:mt-28"
           itemsList={[
             {

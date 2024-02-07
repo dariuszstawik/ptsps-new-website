@@ -1,23 +1,39 @@
-"use client";
 import ArticleSubtitle from "@/components/global-components/article-subtitle";
 import ArticleSubtitle2 from "@/components/global-components/article-subtitle2";
 import PageHeader from "@/components/global-components/page-header";
 import SideMenu from "@/components/global-components/side-menu";
 import SingleArticle from "@/components/global-components/single-article";
+import { client } from "@/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function Superwizja() {
+async function getContentfulArticles() {
+  const resArticles = await client.getEntries({
+    content_type: "supervisionArticle",
+  });
+
+  return resArticles.items;
+}
+
+export default async function Superwizja() {
+  const supervisionArticles = await getContentfulArticles();
+
+  const mainArticle = supervisionArticles.find(
+    (article) => article.fields.isMain
+  );
+
   return (
     <div>
       <PageHeader>Superwizja</PageHeader>
       <section className="grid grid-cols-1 gap-1 lg:grid-cols-3 lg:gap-8 mb-10">
         <div className="col-span-2">
           <SingleArticle
-            title="Czym jest superwizja pracy socjalnej?"
+            // title="Czym jest superwizja pracy socjalnej?"
+            title={mainArticle.fields.title}
             // isTitleAlignedLeft
             // img="/unicef-logo.png"
             className="py-0"
           >
-            <p>
+            {/* <p>
               Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd
               pracy służący rozwiązaniu trudności merytorycznych i emocjonalnych
               związanych z wykonywaniem pracy. To dwustronny proces pomagający
@@ -135,31 +151,37 @@ export default function Superwizja() {
               pracy socjalnej przyjętych w danym ośrodku. Superwizja przyczynia
               się do upowszechnienia standardu oraz jego jednolitego rozumienia
               i realizowania przez wszystkich pracowników.
-            </p>
+            </p> */}
+            {documentToReactComponents(mainArticle.fields.body)}
           </SingleArticle>
         </div>
         <SideMenu
           //   isBlue
           title="Więcej o superwizji"
           className="lg:mt-28"
-          itemsList={[
-            {
-              title: "Czym jest superwizja pracy socjalnej?",
-              path: "",
-            },
-            {
-              title: "Jak wprowadzić superwizję do organizacji?",
-              path: "/superwizja/jak-wprowadzic-superwizje-do-organizacji",
-            },
-            {
-              title: "Jak finansować superwizję?",
-              path: "/superwizja/jak-finansowac-superwizje?",
-            },
-            {
-              title: "Standardy superwizji",
-              path: "/superwizja/standardy-superwizji",
-            },
-          ]}
+          itemsList={supervisionArticles.map((article) => ({
+            title: article.fields.title,
+            path: `/superwizja/${article.fields.slug}`,
+            order: article.fields.order,
+          }))}
+          // itemsList={[
+          //   {
+          //     title: "Czym jest superwizja pracy socjalnej?",
+          //     path: "",
+          //   },
+          //   {
+          //     title: "Jak wprowadzić superwizję do organizacji?",
+          //     path: "/superwizja/jak-wprowadzac-superwizje-do-organizacji",
+          //   },
+          //   {
+          //     title: "Jak finansować superwizję?",
+          //     path: "/superwizja/jak-finansowac-superwizje?",
+          //   },
+          //   {
+          //     title: "Standardy superwizji",
+          //     path: "/superwizja/standardy-superwizji",
+          //   },
+          // ]}
         />
       </section>
     </div>

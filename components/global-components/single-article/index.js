@@ -65,10 +65,10 @@ const SingleArticle = ({
         </div>
       </div>
       {/* <SectionTitle isAlignedLeft={isTitleAlignedLeft}>{title}</SectionTitle> */}
-      <div>
+      <article>
         <p className="font-bold">{lead}</p>
         <div className="text-base leading-relaxed my-4 ">{children}</div>
-      </div>
+      </article>
     </section>
   );
 };

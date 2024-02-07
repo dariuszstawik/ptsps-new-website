@@ -18,8 +18,9 @@ export default function HeroSliderSection() {
     autoplay: true,
   };
   return (
-    <Slider {...settingsLg}>
-      {/* <HeroSlide
+    <div className="slider">
+      <Slider {...settingsLg}>
+        {/* <HeroSlide
         title="PTSPS"
         buttonTitle="Poznaj nas"
         buttonHref="/organizacja/o-nas"
@@ -29,26 +30,27 @@ export default function HeroSliderSection() {
         rzecz profesjonalizacji pomocy społecznej.
       </HeroSlide> */}
 
-      <HeroSlide
-        title="Unicef 2022-2024"
-        buttonTitle="Więcej o projekcie"
-        buttonHref="/projekty/unicef-2022-2024"
-        img="/onas3.jpg"
-      >
-        Wspieramy pracowników socjalnych poprzez superwizje i szkolenia, tak aby
-        mogli efektywnie pomagać osobom z&nbsp;Ukrainy, które schroniły się w
-        naszym kraju.
-      </HeroSlide>
+        <HeroSlide
+          title="Unicef 2022-2024"
+          buttonTitle="Więcej o projekcie"
+          buttonHref="/projekty/unicef-2022-2024"
+          img="/onas3.jpg"
+        >
+          Wspieramy pracowników socjalnych poprzez superwizje i szkolenia, tak
+          aby mogli efektywnie pomagać osobom z&nbsp;Ukrainy, które schroniły
+          się w naszym kraju.
+        </HeroSlide>
 
-      <HeroSlide
-        title="Biblioteka"
-        buttonTitle="Zobacz więcej"
-        buttonHref="/biblioteka"
-        img="/onas4.jpg"
-      >
-        Pobierz bezpłatnie ostatnie numery magazynu "SPS: Superwizja Pracy
-        Socjalnej"
-      </HeroSlide>
-    </Slider>
+        <HeroSlide
+          title="Biblioteka"
+          buttonTitle="Zobacz więcej"
+          buttonHref="/biblioteka"
+          img="/onas4.jpg"
+        >
+          Pobierz bezpłatnie ostatnie numery magazynu "SPS: Superwizja Pracy
+          Socjalnej"
+        </HeroSlide>
+      </Slider>
+    </div>
   );
 }

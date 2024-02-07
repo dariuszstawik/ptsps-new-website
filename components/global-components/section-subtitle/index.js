@@ -18,7 +18,7 @@ export default function SectionSubtitle({
           PTSPS
         </p> */}
       <h3
-        className={`mb-2 text-slate-800 ${
+        className={`mb-2 text-slate-800 text-xl lg:text-2xl xl:text-3xl ${
           isAlignedLeft ? "text-left" : "text-center"
         } ${isWhite && "text-white"}`}
       >

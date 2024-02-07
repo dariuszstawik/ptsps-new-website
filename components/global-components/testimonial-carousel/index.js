@@ -113,6 +113,30 @@ export default function TestimonialCarousel() {
             możliwość przeanalizowania własnych postępowań, działań, zachowań.
             Mówiąc krótko – superwizuj się a otworzysz przed sobą nowe ścieżki.
           </TestimonialCard>
+          <TestimonialCard
+            name="Izabela Krasiejko"
+            title=""
+            img="/Izabela-Krasiejko.jpg"
+          >
+            Superwizja pracy socjalno-wychowawczej i terapeutycznej umożliwia
+            refleksję nad metodycznym działaniem asystenta z rodziną i poziomem
+            współpracy z kooperantami. Służy zarówno podniesieniu jakości
+            usługi, jak i profesjonalizacji zawodu asystent rodziny.
+            Ogólnopolskie Stowarzyszenie Asystentów Rodziny czyni starania, by
+            zapis o obowiązku pracodawcy do zagwarantowania asystentom rodziny i
+            koordynatorom zespołu asysty rodzinnej korzystania z superwizji
+            znalazł się w ustawie o wspieraniu rodziny i systemie pieczy
+            zastępczej.
+          </TestimonialCard>
+          <TestimonialCard
+            name="Paweł Maczyński"
+            title="Przewodniczący, Polska Federacja Związkowa Pracowników Socjalnych i Pomocy Społecznej"
+            img="/Pawel-Maczynski.jpg"
+          >
+            Potrzebujemy wspólnie zadbać, by przywrócić zaufanie do superwizji
+            wśród pracowników socjalnych i uczynić superwizję faktycznie
+            dostępną dla wszystkich pomagających.
+          </TestimonialCard>
         </Slider>
       </div>
 

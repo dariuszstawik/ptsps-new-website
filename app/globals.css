@@ -82,10 +82,21 @@
     @apply text-2xl lg:text-3xl
   }
   
-  h3 {
-    @apply text-xl lg:text-2xl xl:text-3xl text-primaryBlue my-4
+  article h2 {
+    @apply font-semibold text-xl lg:text-2xl mt-8 mb-4 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4 after:mb-6
   }
+
+  h3 {
+    @apply text-xl lg:text-2xl xl:text-3xl my-4
+  }
+
+  article h3 {
+    @apply text-lg lg:text-xl mt-8}
   
+article b {
+  @apply font-semibold;
+}
+
   h4 {
     @apply text-lg lg:text-xl xl:text-2xl
   }
@@ -102,16 +113,23 @@
     @apply font-semibold italic;
   }
 
-  /* article strong {
-    @apply text-primaryBlue;
-  } */
+ol {
+  @apply list-decimal list-inside;
+}
+
+ol li {
+  @apply my-3;
+}
+
+ol li p {
+  @apply inline }
 
 }
 
-.slick-slide {
+div.slider .slick-slide {
   visibility: hidden;
 }
-.slick-slide.slick-active {
+div.slider .slick-slide.slick-active {
   visibility: visible;
 }
 

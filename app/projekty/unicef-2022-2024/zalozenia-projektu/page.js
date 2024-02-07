@@ -60,6 +60,7 @@ export default function ZalozeniaProjektu() {
           // isBlue
           className="lg:mt-28"
           title="Więcej o projekcie"
+          img="/unicef-logo.png"
           itemsList={[
             {
               title: "Unicef 2022-2024 - wstęp",
