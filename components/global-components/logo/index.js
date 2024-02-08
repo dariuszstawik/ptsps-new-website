@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Logo({ hasWhiteBackground }) {
   return (
-    <Link href="/">
+    <Link href="/" className="">
       <div className={hasWhiteBackground && "bg-white rounded"}>
         <Image
           src="/logo.png"

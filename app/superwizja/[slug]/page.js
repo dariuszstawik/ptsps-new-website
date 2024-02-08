@@ -35,9 +35,6 @@ export default async function SupervisionArticle({ params }) {
   const supervisionArticle = await getContentfulArticle(slug);
   const supervisionArticles = await getContentfulArticles();
 
-  console.log("--------------");
-  console.log(supervisionArticles);
-
   return (
     <div>
       <PageHeader>Superwizja</PageHeader>
@@ -65,7 +62,7 @@ export default async function SupervisionArticle({ params }) {
         <SideMenu
           //   isBlue
           title="Więcej o superwizji"
-          className="lg:mt-28"
+          className="lg:mt-32"
           itemsList={supervisionArticles.map((article) => ({
             title: article.fields.title,
             path: `/superwizja/${article.fields.slug}`,

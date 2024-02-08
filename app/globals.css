@@ -101,6 +101,11 @@ article b {
     @apply text-lg lg:text-xl xl:text-2xl
   }
   
+article a {
+  @apply text-primaryBlue underline;
+}
+
+
   section {
     @apply pt-20 px-10 lg:px-32;
   }

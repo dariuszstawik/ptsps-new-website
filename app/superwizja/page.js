@@ -158,7 +158,7 @@ export default async function Superwizja() {
         <SideMenu
           //   isBlue
           title="Więcej o superwizji"
-          className="lg:mt-28"
+          className="lg:mt-32"
           itemsList={supervisionArticles.map((article) => ({
             title: article.fields.title,
             path: `/superwizja/${article.fields.slug}`,
