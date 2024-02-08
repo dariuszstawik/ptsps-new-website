@@ -51,17 +51,17 @@ export default function ParagraphWithImageOnTheLeft({
             <div className="grid grid-cols-2 gap-10">
               <img
                 className="object-cover w-full col-span-2 rounded shadow-lg"
+                src="/grupa-samorozwojowa.jpg"
+                alt=""
+              />
+              <img
+                className="object-cover w-full rounded shadow-lg"
                 src="/onas3.jpg"
                 alt=""
               />
               <img
                 className="object-cover w-full rounded shadow-lg"
                 src="/onas4.jpg"
-                alt=""
-              />
-              <img
-                className="object-cover w-full rounded shadow-lg"
-                src="/onas5.jpg"
                 alt=""
               />
             </div>
