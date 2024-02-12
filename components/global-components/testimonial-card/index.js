@@ -3,7 +3,7 @@
 export default function TestimonialCard({ name, title, img, children }) {
   return (
     <div className="w-full px-0 lg:px-4">
-      <div className="p-4 lg:p-8 mb-6 shadow rounded flex flex-col justify-between lg:min-h-[550px] bg-slate-100 border border-darkBlue">
+      <div className="p-4 lg:p-8 mb-6 shadow rounded flex flex-col justify-between lg:min-h-[500px] bg-slate-100 border border-darkBlue">
         <span className="block">
           <svg
             className="mb-6 text-primaryBlue h-8"
