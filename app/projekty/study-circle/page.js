@@ -12,6 +12,7 @@ export default function StudyCircle() {
       <SingleArticle
         title="Study Circle"
         lead="Study Circle to szwedzka metoda edukacji dorosłych. Polega na tym, że osoby, które chcą zdobyć wiedzę czy umiejętności z jakiegoś zakresu, rozwiązać nurtujący je problem itp., spotykają się regularnie w małych grupach (Study Circles) w celu wspólnego zgłębienia interesującego je tematu."
+        img="/grupa-samorozwojowa.jpg"
       >
         <p>
           Praca grupy jest wzbogacona o wiedzę i doświadczenie jej

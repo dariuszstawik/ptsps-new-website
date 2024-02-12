@@ -2,6 +2,7 @@
 import Button from "@/components/global-components/button";
 import SectionTitle from "@/components/global-components/section-title";
 import { Lightbulb, Milestone } from "lucide-react";
+import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
 
 export default function AboutSection() {
@@ -30,8 +31,8 @@ export default function AboutSection() {
             szkoleniami w obszarze pomocy społecznej, metodyków pracy socjalnej
             oraz osoby zajmujące się pomocą społeczną z perspektywy naukowej.
           </p>
-          <Button href="/organizacja/o-nas" className="mr-auto">
-            Poznaj nas
+          <Button className="mr-auto">
+            <Link href="/organizacja/o-nas">Poznaj nas</Link>
           </Button>
         </div>
       </div>

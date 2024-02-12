@@ -114,8 +114,8 @@ export default function TestimonialCarousel() {
             Mówiąc krótko – superwizuj się a otworzysz przed sobą nowe ścieżki.
           </TestimonialCard>
           <TestimonialCard
-            name="Izabela Krasiejko"
-            title=""
+            name="Dr hab. Izabela Krasiejko"
+            title="Prof. Uniwersytetu Jana Długosza w Częstochowie"
             img="/Izabela-Krasiejko.jpg"
           >
             Superwizja pracy socjalno-wychowawczej i terapeutycznej umożliwia

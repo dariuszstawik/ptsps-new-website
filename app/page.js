@@ -34,7 +34,7 @@ export default function Home() {
           img="onas4.jpg"
           hasBlueBackground
           buttonTitle={"Więcej o superwizji"}
-          buttonLink={"/biblioteka"}
+          buttonLink={"/superwizja"}
         >
           {/* Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
         służący rozwiązaniu trudności merytorycznych i emocjonalnych związanych
