@@ -70,8 +70,8 @@ const navbarData = [
       {
         id: 2,
         title: "Kodeks etyczny",
-        path: "/projekty/kodeks-etyczny",
-        isVisible: false,
+        path: "/organizacja/dokumenty/kodeks-etyczny-osoby-superwizujacej-prace-socjalna-ptsps",
+        isVisible: true,
       },
       {
         id: 3,
