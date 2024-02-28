@@ -92,7 +92,7 @@ export default async function DokumentyPage() {
                 .map((item, i) => {
                   return (
                     <>
-                      {item.fields.order >= 50 && (
+                      {item.fields.order > 50 && (
                         <li key={i}>
                           <ListItem isDocument className="flex">
                             <Link
@@ -111,71 +111,6 @@ export default async function DokumentyPage() {
                 })}
           </ul>
         </ParagraphWithImageOnTheLeft>
-
-        {/* <section className="relative py-20" id="offerSection">
-        <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap items-start -mx-4">
-            <div className="relative w-full md:w-2/5 px-4 mb-12 md:mb-0">
-              <Image
-                className="h-96 lg:h-128 w-full rounded-xl object-cover"
-                src="/documents.png"
-                alt="zdjęcia jaków wyświetlonyvh na różnych urządzeniach"
-                width={1015}
-                height={1018}
-              />
-            </div>
-            <div className="relative w-full md:w-3/5 px-4 pb-20 lg:pb-0">
-              <div className="lg:ml-auto max-w-md">
-                <h2 className="mb-6 lg:mb-10 text-4xl font-semibold font-heading" />
-                <SectionTitle isAlignedLeft>Dokumenty</SectionTitle>
-                <ul className="my-4">
-                  <li>
-                    <ListItem isDocument>Statut</ListItem>
-                    <ListItem isDocument>
-                      Polityka ochrony przed naruszeniem praw bądź
-                      wykorzystywaniem beneficjentów
-                    </ListItem>
-                    <ListItem isDocument>
-                      Polityka ochrony przed korupcją, oszustwami oraz innymi
-                      zachowaniami nieetycznymi
-                    </ListItem>
-                    <ListItem isDocument>
-                      Polityka przeciwdziałania wykorzystywaniu i przemocy
-                      seksualnej (PSEA)
-                    </ListItem>
-                    <ListItem isDocument>Sprawozdania</ListItem>
-                    <ListItem isDocument>Standardy superwizji</ListItem>
-                    <ListItem isDocument>Standardy szkoleń</ListItem>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-        {/* <div className="max-w-3xl">
-        <ul className="">
-          <li>
-            <ListItem isDocument>Statut</ListItem>
-            <ListItem isDocument>
-              Polityka ochrony przed naruszeniem praw bądź wykorzystywaniem
-              beneficjentów
-            </ListItem>
-            <ListItem isDocument>
-              Polityka ochrony przed korupcją, oszustwami oraz innymi
-              zachowaniami nieetycznymi
-            </ListItem>
-            <ListItem isDocument>
-              Polityka przeciwdziałania wykorzystywaniu i przemocy seksualnej
-              (PSEA)
-            </ListItem>
-            <ListItem isDocument>Sprawozdania</ListItem>
-            <ListItem isDocument>Standardy superwizji</ListItem>
-            <ListItem isDocument>Standardy szkoleń</ListItem>
-          </li>
-        </ul>
-      </div> */}
       </div>
     </>
   );
