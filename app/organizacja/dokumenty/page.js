@@ -26,22 +26,29 @@ export default async function DokumentyPage() {
         <ParagraphWithImageOnTheLeft title="Dokumenty" img="/documents.png">
           <ul className="my-4">
             {documents &&
-              documents.map((item, i) => {
-                return (
-                  <>
-                    <li key={i}>
-                      <ListItem isDocument className="flex">
-                        <Link
-                          href={`/organizacja/dokumenty/${item.fields.slug}`}
-                        >
-                          {item.fields.title} <Arrow />
-                        </Link>
-                      </ListItem>
-                    </li>
-                  </>
-                );
-              })}
-            <ListItem isDocument className="py-0">
+              documents
+                .sort((a, b) => a.fields.order - b.fields.order)
+                .map((item, i) => {
+                  return (
+                    <>
+                      {item.fields.order <= 50 && (
+                        <li key={i}>
+                          <ListItem isDocument className="flex">
+                            <Link
+                              href={`/organizacja/dokumenty/${item.fields.slug}`}
+                            >
+                              {item.fields.shortTitle
+                                ? item.fields.shortTitle
+                                : item.fields.title}{" "}
+                              <Arrow />
+                            </Link>
+                          </ListItem>
+                        </li>
+                      )}
+                    </>
+                  );
+                })}
+            <ListItem isDocument className="pt-0 pb-0">
               <Collapse title="Sprawozdania">
                 <span className="block my-2">
                   Zasadą Towarzystwa jest całkowita transparentność naszych
@@ -79,6 +86,29 @@ export default async function DokumentyPage() {
                 </span>
               </Collapse>
             </ListItem>
+            {documents &&
+              documents
+                .sort((a, b) => a.fields.order - b.fields.order)
+                .map((item, i) => {
+                  return (
+                    <>
+                      {item.fields.order >= 50 && (
+                        <li key={i}>
+                          <ListItem isDocument className="flex">
+                            <Link
+                              href={`/organizacja/dokumenty/${item.fields.slug}`}
+                            >
+                              {item.fields.shortTitle
+                                ? item.fields.shortTitle
+                                : item.fields.title}{" "}
+                              <Arrow />
+                            </Link>
+                          </ListItem>
+                        </li>
+                      )}
+                    </>
+                  );
+                })}
           </ul>
         </ParagraphWithImageOnTheLeft>
 

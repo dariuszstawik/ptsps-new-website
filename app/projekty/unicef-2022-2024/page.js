@@ -167,7 +167,7 @@ export default function Unicef20222024() {
           className="lg:mt-28"
           itemsList={[
             {
-              title: "Unicef 2022-2024 - wstęp",
+              title: "UNICEF 2022-2024 - wstęp",
               path: "/projekty/unicef-2022-2024",
             },
             {

@@ -48,7 +48,7 @@ export default function RealizacjaSuperwizje() {
           img="/unicef-logo.png"
           itemsList={[
             {
-              title: "Unicef 2022-2024 - wstęp",
+              title: "UNICEF 2022-2024 - wstęp",
               path: "/projekty/unicef-2022-2024",
             },
             {
