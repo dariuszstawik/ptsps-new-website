@@ -69,7 +69,7 @@ const navbarData = [
       },
       {
         id: 2,
-        title: "Kodeks etyczny",
+        title: "Kodeks Etyczny",
         path: "/organizacja/dokumenty/kodeks-etyczny-osoby-superwizujacej-prace-socjalna-ptsps",
         isVisible: true,
       },
