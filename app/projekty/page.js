@@ -35,7 +35,7 @@ export default function Projekty() {
           title="Kodeks Etyczny"
           img="documents41.jpg"
           buttonTitle="Więcej o projekcie"
-          buttonLink="/projekty/kodeks-etyczny"
+          buttonLink="/organizacja/dokumenty/kodeks-etyczny-osoby-superwizujacej-prace-socjalna-ptsps"
         >
           Wraz z wejściem w życie rozporządzenia Ministra Rodziny, Pracy i
           Polityki Społecznej z 20 grudnia 2016 roku określającego kryteria

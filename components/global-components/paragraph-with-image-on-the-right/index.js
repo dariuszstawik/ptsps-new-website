@@ -57,7 +57,7 @@ export default function ParagraphWithImageOnTheRight({
         {children}
         {buttonTitle && buttonLink && (
           <Button className="mr-auto mt-6">
-            <Link href="/">{buttonTitle}</Link>
+            <Link href={buttonLink}>{buttonTitle}</Link>
           </Button>
         )}
       </div>
