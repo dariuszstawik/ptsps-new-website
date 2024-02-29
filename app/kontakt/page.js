@@ -11,7 +11,7 @@ export default function Kontakt() {
         <ParagraphWithImageOnTheLeft
           hasSubtitle
           title="Kontakt"
-          img="contact.jpg"
+          img="/contact.jpg"
         >
           <div className="flex flex-col gap-8 mt-4">
             <div className="flex flex-col gap-6">
