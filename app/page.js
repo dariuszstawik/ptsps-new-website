@@ -7,6 +7,7 @@ import AboutSection from "@/components/main-page/about-section";
 import CounterSection from "@/components/main-page/counter-section";
 import HeroSection from "@/components/main-page/hero-section";
 import HeroSliderSection from "@/components/main-page/hero-slider-section";
+import LogoCarousel from "@/components/main-page/logo-carousel";
 import NewsCard from "@/components/main-page/news-card";
 import ProjectsSection from "@/components/main-page/projects-section";
 import Testimonials from "@/components/main-page/testimonials";
@@ -89,6 +90,10 @@ export default function Home() {
         migrantów z Ukrainy. */}
         </ParagraphWithImageOnTheLeft>
         {/* <SupervisorsMap /> */}
+      </section>
+      <section className="p-16 pt-20 pb-12 overflow-x-hidden">
+        <SectionTitle>Współpraca</SectionTitle>
+        <LogoCarousel />
       </section>
     </div>
   );
