@@ -61,7 +61,7 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section className="bg-white pb-10 px-0 lg:p-6 lg:pt-2 overflow-x-hidden">
+    <section className="bg-white pb-10 px-0 lg:p-6 pt-6 lg:pt-10 overflow-x-hidden">
       <div className="hidden lg:block">
         <Slider {...settingsLg}>
           <TestimonialCard

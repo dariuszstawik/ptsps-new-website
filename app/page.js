@@ -18,16 +18,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      {/* <HeroSection /> */}
       <HeroSliderSection />
-      {/* <div className="my-10 px-4 md:hidden">
-        <NewsCard />
-      </div> */}
+
       <div className="mb-32">
         <AboutSection />
         <CounterSection />
       </div>
-      {/* <ProjectsSection /> */}
 
       <div className="bg-darkBlue py-8">
         <ParagraphWithImageOnTheLeft
@@ -37,12 +33,6 @@ export default function Home() {
           buttonTitle={"Więcej o superwizji"}
           buttonLink={"/superwizja"}
         >
-          {/* Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
-        służący rozwiązaniu trudności merytorycznych i emocjonalnych związanych
-        z wykonywaniem pracy. Poszukujesz superwizora, metodyka lub szkoleniowca
-        w obszarze pracy socjalnej i pomocy społecznej? Znajdziesz go u nas! W
-        naszej bazie znajduje się obecnie 54 certyfikowanych superwizorów pracy
-        socjalnej oraz 35 metodyków i szkoleniowców w obszarze pracy socjalnej. */}
           Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
           służący rozwiązaniu trudności merytorycznych i emocjonalnych
           związanych z wykonywaniem pracy. To dwustronny proces pomagający
@@ -55,41 +45,32 @@ export default function Home() {
           <span className="block h-4" />
         </ParagraphWithImageOnTheLeft>
       </div>
-      {/* <Testimonials /> */}
 
       <section className="p-16 py-20">
         <SectionTitle>Okiem ekspertów i praktyków</SectionTitle>
         <TestimonialsCarousel />
       </section>
-      {/* <TeamSection /> */}
-      {/* <TestimonialsCarousel /> */}
 
       <section className="p-10 pt-24 bg-slate-200">
         <SectionTitle>Aktualny projekt</SectionTitle>
-        <ParagraphWithImageOnTheLeft
-          title="Wsparcie rozwoju pracowników polskiego systemu pomocy społecznej"
-          img="/unicef-logo.png"
-          buttonTitle="Więcej o projekcie"
-          buttonLink="/projekty/unicef-2022-2024"
-          hasSectionSubtitle
-          // hasBlueBackground
-        >
-          Projekt realizowany we współpracy z Biurem Reagowania na Potrzeby
-          Uchodźców UNICEF. Jest odpowiedzią na kryzys uchodźczy związany z
-          wybuchem pełnoskalowej wojny w Ukrainie. Skala migracji z Ukrainy do
-          Polski spowodowała znaczne obciążenie naszego systemu pomocy
-          społecznej i postawiła przed pracownikami pomocy społecznej nowe
-          zadania i nowe wymagania. Celem projektu jest wsparcie pracowników
-          (superwizyjne i edukacyjne), tak by mogli efektywnie pomagać osobom z
-          Ukrainy, które schroniły się w naszym kraju.
-          {/* Podstawowe działania to uruchomienie i
-        prowadzenie przez dziesięć miesięcy stu osiemdziesięciu grup
-        superwizyjnych dla pracowników pomocy społecznej oraz opracowanie
-        dwudziestu programów specjalistycznych szkoleń i przeprowadzenie ich dla
-        osiemdziesięciu grup pracowników w największych miastach – skupiskach
-        migrantów z Ukrainy. */}
-        </ParagraphWithImageOnTheLeft>
-        {/* <SupervisorsMap /> */}
+        <div className="-mt-4">
+          <ParagraphWithImageOnTheLeft
+            title="Wsparcie rozwoju pracowników polskiego systemu pomocy społecznej"
+            img="/unicef-logo.png"
+            buttonTitle="Więcej o projekcie"
+            buttonLink="/projekty/unicef-2022-2024"
+            hasSectionSubtitle
+          >
+            Projekt realizowany we współpracy z Biurem Reagowania na Potrzeby
+            Uchodźców UNICEF. Jest odpowiedzią na kryzys uchodźczy związany z
+            wybuchem pełnoskalowej wojny w Ukrainie. Skala migracji z Ukrainy do
+            Polski spowodowała znaczne obciążenie naszego systemu pomocy
+            społecznej i postawiła przed pracownikami pomocy społecznej nowe
+            zadania i nowe wymagania. Celem projektu jest wsparcie pracowników
+            (superwizyjne i edukacyjne), tak by mogli efektywnie pomagać osobom
+            z Ukrainy, które schroniły się w naszym kraju.
+          </ParagraphWithImageOnTheLeft>
+        </div>
       </section>
       <section className="p-16 pt-20 pb-12 overflow-x-hidden">
         <SectionTitle>Współpraca</SectionTitle>
