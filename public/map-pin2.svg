@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="160"
+   height="256"
+   viewBox="0 0 42.333333 67.733333"
+   version="1.1"
+   id="svg11214"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="map-pin2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview11216"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.1893044"
+     inkscape:cx="288.40388"
+     inkscape:cy="180.77794"
+     inkscape:window-width="1680"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs11211" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 21.271661,67.435375 c -0.88397,0 -1.70235,-0.556122 -2.15152,-1.46168 L 16.380771,60.45931 C 10.755821,49.142814 5.4438716,38.454558 3.6290716,34.119331 c -1.3194,-3.220008 -1.98347,-6.657856 -1.98347,-10.239939 0,-12.879289 8.8041094,-23.3571411 19.6260594,-23.3571411 10.82195,0 19.62607,10.4778521 19.62607,23.3571411 0,3.579852 -0.66407,7.016957 -1.97223,10.216147 -0.0156,0.03866 -0.0331,0.07732 -0.05,0.11524 -1.84979,4.393218 -7.12801,15.013074 -12.71484,26.251505 l -2.7375,5.511411 c -0.44918,0.905558 -1.26755,1.46168 -2.15153,1.46168 z"
+       style="fill:#f4791b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.681515;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       stroke-linecap="round"
+       id="path4" />
+    <path
+       d="m 21.702111,31.612836 c -5.27161,0 -9.56093,-4.288703 -9.56093,-9.560312 0,-5.271608 4.28932,-9.560934 9.56093,-9.560934 5.27161,0 9.56031,4.289326 9.56031,9.560934 0,5.271609 -4.2887,9.560312 -9.56031,9.560312 z"
+       style="fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:0.622092;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       stroke-linecap="round"
+       id="path6" />
+  </g>
+</svg>

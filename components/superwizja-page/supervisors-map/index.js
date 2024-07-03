@@ -1,7 +1,10 @@
 "use client";
 
+import Button from "@/components/global-components/button";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import MapPin2 from "../map-pin";
 
 export default function SupervisorsMap({ content }) {
   const [region, setRegion] = useState("");
@@ -45,11 +48,9 @@ export default function SupervisorsMap({ content }) {
   console.log(content);
   // console.log(content.fields.location.lat, content[0].fields.location.lon);
 
-  console.log(region, city);
-
   return (
-    <div className="w-full flex gap-32">
-      <div className="bg-white w-[600px] relative">
+    <div className="w-full flex  gap-20">
+      <div className="bg-white h-[80vh] relative mb-auto shrink-0">
         <img
           src="/mappol1.svg"
           alt="Mapa superwizorów"
@@ -74,7 +75,7 @@ export default function SupervisorsMap({ content }) {
                   ).toFixed(2) + "%",
               }}
             >
-              <MapPin
+              <MapPin2
                 onClick={() => changeCityThroughMapPin(supervisor.fields.city)}
                 className={`${
                   supervisor.fields.city === city && "text-primaryYellow"
@@ -188,22 +189,40 @@ export default function SupervisorsMap({ content }) {
               }
             })
             .map((supervisor) => (
-              <li key={supervisor.sys.id}>
-                <p>{supervisor.fields.name}</p>
-                <p className="flex gap-2">
-                  <MapPin className="text-primaryBlue w-5" />
-                  {supervisor.fields.city}
-                </p>
-                <p className="flex gap-2">
-                  {" "}
-                  <Mail className="text-primaryBlue w-5" />{" "}
-                  {supervisor.fields.email}
-                </p>
-                <p className="flex gap-2">
-                  {" "}
-                  <Phone className="text-primaryBlue w-4" />{" "}
-                  {supervisor.fields.phone}
-                </p>
+              <li
+                key={supervisor.sys.id}
+                className="flex gap-10 items-center mt-8"
+              >
+                <img
+                  src={supervisor.fields.image?.fields.file.url}
+                  className="w-40 h-40 rounded-full object-cover"
+                />
+                <div className="pb-2">
+                  <p className="font-semibold text-xl text-primaryBlue">
+                    {supervisor.fields.name}
+                  </p>
+                  <p className="flex gap-2">
+                    <MapPin className="text-primaryBlue w-5" />
+                    {supervisor.fields.city}
+                  </p>
+                  <p className="flex gap-2">
+                    {" "}
+                    <Mail className="text-primaryBlue w-5" />{" "}
+                    {supervisor.fields.email}
+                  </p>
+                  <p className="flex gap-2">
+                    {" "}
+                    <Phone className="text-primaryBlue w-4" />{" "}
+                    {supervisor.fields.phone}
+                  </p>
+                  <Link
+                    href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
+                  >
+                    <button className="text-primaryBlue font-semibold">
+                      czytaj więcej &rarr;
+                    </button>
+                  </Link>
+                </div>
               </li>
             ))}
         </ul>

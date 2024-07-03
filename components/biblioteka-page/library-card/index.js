@@ -17,14 +17,6 @@ export default function LibraryCard({ title, img, file }) {
             <h3 className="text-lg font-medium text-gray-900">{title} </h3>
           </a>
 
-          {/* <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
-          </p> */}
-
           <a
             href={file}
             className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"

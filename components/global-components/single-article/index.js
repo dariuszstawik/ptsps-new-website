@@ -52,19 +52,11 @@ const SingleArticle = ({
               className="rounded"
             />
           )}
-          {img && (
-            <img
-              src={img}
-              alt={alt ? alt : ""}
-              // style={{ width: "600px", height: "440px", objectFit: "cover" }}
-              className="rounded"
-            />
-          )}
-          {/* <img src="/documents31.jpg" className="rounded" /> */}
+          {img && <img src={img} alt={alt ? alt : ""} className="rounded" />}
+
           {hasSlider && <ImageSlider />}
         </div>
       </div>
-      {/* <SectionTitle isAlignedLeft={isTitleAlignedLeft}>{title}</SectionTitle> */}
       <article>
         <p className="font-bold">{lead}</p>
         <div className="text-base leading-relaxed my-4 ">{children}</div>

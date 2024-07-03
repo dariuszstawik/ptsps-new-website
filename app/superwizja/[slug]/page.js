@@ -41,7 +41,11 @@ export default async function SupervisionArticle({ params }) {
       <section className="grid grid-cols-1 gap-1 lg:grid-cols-3 lg:gap-8 mb-10">
         <div className="col-span-2">
           <SingleArticle
-            title={supervisionArticle.fields.title}
+            title={
+              supervisionArticle.fields.title
+                ? supervisionArticle.fields.title
+                : ""
+            }
             lead={
               supervisionArticle.fields.lead
                 ? supervisionArticle.fields.lead
