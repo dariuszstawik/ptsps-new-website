@@ -18,19 +18,18 @@ const SupervisorProfile = ({
 }) => {
   return (
     <section
-      className={`max-w-6xl  px-8 mb-16 flex flex-col gap-6 ${className}`}
+      className={`max-w-6xl  px-8 mb-16 flex flex-col gap-6 supervisor ${className}`}
     >
       {" "}
       {/* <SectionTitle isAlignedLeft={isTitleAlignedLeft}>{title}</SectionTitle> */}
-      <div className="flex gap-10">
-        <div className="shrink-0 bg-gray-200">
+      <div className="flex lg:gap-10">
+        <div className="shrink-0 bg-gray-200 hidden lg:block">
           <img
             src={supervisor.fields.image?.fields.file.url}
-            className="w-[440px] h-[600px] rounded object-cover"
+            className="w-[330px] h-[450px] xl:w-[440px] xl:h-[600px] rounded object-cover border-b-darkBlue border-b-8"
           />
-          {/* {img && <img src={img} alt={alt ? alt : ""} className="rounded" />} */}
         </div>
-        <div className="flex flex-col gap-2 pb-2 ">
+        <div className="flex flex-col pb-2 ">
           <p className="font-semibold text-4xl text-primaryBlue">
             {supervisor.fields.name}
           </p>
@@ -46,7 +45,13 @@ const SupervisorProfile = ({
             {" "}
             <Phone className="text-primaryBlue w-4" /> {supervisor.fields.phone}
           </p>
-          <h2 className=" text-xl lg:text-2xl mt-4 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
+          <div className="lg:hidden mt-4">
+            <img
+              src={supervisor.fields.image?.fields.file.url}
+              className="w-full max-w-[440px] rounded object-cover border-b-darkBlue border-b-8"
+            />
+          </div>
+          <h2 className=" text-xl lg:text-2xl mt-6 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
             obszar działania
           </h2>
           {documentToReactComponents(supervisor.fields.scope)}
@@ -55,7 +60,7 @@ const SupervisorProfile = ({
             jednym zdaniem
           </h2>
           {supervisor.fields.summary}
-          <h2 className=" text-xl lg:text-2xl mt-4 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
+          <h2 className=" text-xl lg:text-2xl mt-6 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
             więcej informacji
           </h2>
           {documentToReactComponents(supervisor.fields.description)}

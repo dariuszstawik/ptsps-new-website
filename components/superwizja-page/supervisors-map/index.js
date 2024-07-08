@@ -57,7 +57,7 @@ export default function SupervisorsMap({ content }) {
   console.log(isHovered);
 
   return (
-    <div className="w-full flex gap-20">
+    <div className="w-full flex justify-center xl:gap-20">
       <div className="bg-white h-[80vh] relative mb-auto shrink-0">
         <img
           src="/mappol1.svg"

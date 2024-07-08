@@ -131,6 +131,10 @@ ol li p {
 
 }
 
+.supervisor ul {
+  @apply list-disc pl-4;
+}
+
 div.slider .slick-slide {
   visibility: hidden;
 }
