@@ -1,6 +1,6 @@
 import SectionTitle from "@/components/global-components/section-title";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Globe, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
@@ -45,6 +45,14 @@ const SupervisorProfile = ({
             {" "}
             <Phone className="text-primaryBlue w-4" /> {supervisor.fields.phone}
           </p>
+          {supervisor.fields.urlAddress && (
+            <p className="flex gap-2">
+              {" "}
+              <Globe className="text-primaryBlue w-4" />{" "}
+              {supervisor.fields.urlAddress}
+            </p>
+          )}
+
           <div className="lg:hidden mt-4">
             <img
               src={supervisor.fields.image?.fields.file.url}
