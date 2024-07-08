@@ -5,11 +5,13 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import MapPin2 from "../map-pin";
+import Collapse from "@/components/global-components/collapse";
 
 export default function SupervisorsMap({ content }) {
   const [isHovered, setIsHovered] = useState(null);
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const changeRegion = (e) => {
     setRegion(e.target.value);
@@ -60,7 +62,7 @@ export default function SupervisorsMap({ content }) {
         <img
           src="/mappol1.svg"
           alt="Mapa superwizorów"
-          className="w-full h-full"
+          className="w-full h-full hidden xl:block"
         />
 
         <ul>
@@ -124,12 +126,7 @@ export default function SupervisorsMap({ content }) {
         /> */}
       </div>
       <div>
-        <div className="mx-auto mb-4">
-          Aby wyświetlić listę superwizorów dostępnych w danej lokalizacji,
-          kliknij na pinezkę na mapie lub wybierz poniżej odpowiednie
-          województwo lub miasto.
-        </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
           <div>
             <h3 className="text-lg mt-4 mb-2  font-semibold">Województwo </h3>
             <select
@@ -137,7 +134,7 @@ export default function SupervisorsMap({ content }) {
               value={region}
               className="border border-primaryBlue rounded-md p-2"
             >
-              <option value="">Wszystkie</option>
+              <option value="">Wybierz</option>
               <option value="dolnośląskie">Dolnośląskie</option>
               <option value="kujawsko-pomorskie">Kujawsko-pomorskie</option>
               <option value="lubelskie">Lubelskie</option>
@@ -163,7 +160,7 @@ export default function SupervisorsMap({ content }) {
               value={city}
               className="border border-primaryBlue rounded-md p-2"
             >
-              <option value="">Wszystkie</option>
+              <option value="">Wybierz</option>
               {content.map((supervisor) => (
                 <option key={supervisor.sys.id} value={supervisor.fields.city}>
                   {supervisor.fields.city}
@@ -171,6 +168,11 @@ export default function SupervisorsMap({ content }) {
               ))}
             </select>
           </div>
+        </div>
+        <div className="mx-auto my-4 hidden xl:block">
+          Aby wyświetlić listę superwizorów dostępnych w danej lokalizacji,
+          kliknij na pinezkę na mapie lub wybierz poniżej odpowiednie
+          województwo lub miasto.
         </div>
 
         <ul>
@@ -218,24 +220,27 @@ export default function SupervisorsMap({ content }) {
                   city.toUpperCase() === supervisor.fields.city.toUpperCase()
                 );
               } else {
-                return true; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
+                return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
               }
             })
             .map((supervisor) => (
-              <li key={supervisor.sys.id} className="flex items-center mt-6">
+              <li key={supervisor.sys.id} className="flex flex-col mt-6 w-full">
                 {/* <img
                   src={supervisor.fields.image?.fields.file.url}
                   className="w-24 h-24 rounded-full object-cover"
                 /> */}
-                <div className="pb-2">
-                  <p className="font-semibold text-xl text-primaryBlue">
+                <div className="pb-2 flex flex-col gap-2">
+                  {/* <p className="font-semibold text-base text-primaryBlue m-0"> */}
+                  <h3 className="text-lg m-0 text-primaryBlue font-semibold">
                     {supervisor.fields.name}
-                  </p>
-                  <p className="flex gap-2">
-                    <MapPin className="text-primaryBlue w-5" />
-                    {supervisor.fields.city}
-                  </p>
-                  {/* <p className="flex gap-2">
+                  </h3>
+
+                  <div className="flex flex-col lg:flex-row gap-2 lg:justify-between">
+                    <p className="flex gap-2 m-0">
+                      <MapPin className="text-primaryBlue w-5" />
+                      {supervisor.fields.city}
+                    </p>
+                    {/* <p className="flex gap-2">
                     {" "}
                     <Mail className="text-primaryBlue w-5" />{" "}
                     {supervisor.fields.email}
@@ -245,17 +250,71 @@ export default function SupervisorsMap({ content }) {
                     <Phone className="text-primaryBlue w-4" />{" "}
                     {supervisor.fields.phone}
                   </p> */}
-                  <Link
-                    href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
-                  >
-                    <button className="text-primaryBlue font-semibold">
-                      zobacz profil &rarr;
-                    </button>
-                  </Link>
-                  <hr className="mt-4" />
+                    <Link
+                      href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
+                    >
+                      <button className="text-primaryBlue ml-auto">
+                        wyświetl profil &rarr;
+                      </button>
+                    </Link>
+                  </div>
                 </div>
+                <hr className="mt-2 w-full" />
               </li>
             ))}
+
+          {/* <Collapse
+            title="W tym rejonie działają również..."
+            isInSupervisorsMap
+          >
+            <ul>
+              {content
+                .filter((supervisor) => {
+                  if (region) {
+                    return supervisor.fields.mapScope
+                      ? supervisor.fields.mapScope
+                          .toString()
+                          .toUpperCase()
+                          .includes(["_", region.toUpperCase(), "_"].join(""))
+                      : "";
+                  } else if (city) {
+                    return (
+                      city.toUpperCase() ===
+                      supervisor.fields.city.toUpperCase()
+                    );
+                  } else {
+                    return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
+                  }
+                })
+                .map((supervisor) => (
+                  <li
+                    key={supervisor.sys.id}
+                    className="flex flex-col mt-6 w-full"
+                  >
+                    <div className="pb-2 flex flex-col gap-2">
+                      <h3 className="text-lg m-0 text-primaryBlue font-semibold">
+                        {supervisor.fields.name}
+                      </h3>
+                      <div className="flex justify-between">
+                        <p className="flex gap-2 m-0">
+                          <MapPin className="text-primaryBlue w-5" />
+                          {supervisor.fields.city}
+                        </p>
+
+                        <Link
+                          href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
+                        >
+                          <button className="text-primaryBlue ml-auto">
+                            wyświetl profil &rarr;
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                    <hr className="mt-2 w-full" />
+                  </li>
+                ))}
+            </ul>
+          </Collapse> */}
         </ul>
       </div>
     </div>

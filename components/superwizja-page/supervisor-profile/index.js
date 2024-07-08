@@ -23,7 +23,7 @@ const SupervisorProfile = ({
       {" "}
       {/* <SectionTitle isAlignedLeft={isTitleAlignedLeft}>{title}</SectionTitle> */}
       <div className="flex gap-10">
-        <div className="shrink-0">
+        <div className="shrink-0 bg-gray-200">
           <img
             src={supervisor.fields.image?.fields.file.url}
             className="w-[440px] h-[600px] rounded object-cover"
@@ -31,7 +31,7 @@ const SupervisorProfile = ({
           {/* {img && <img src={img} alt={alt ? alt : ""} className="rounded" />} */}
         </div>
         <div className="flex flex-col gap-2 pb-2 ">
-          <p className="font-semibold text-5xl uppercase text-primaryBlue">
+          <p className="font-semibold text-4xl text-primaryBlue">
             {supervisor.fields.name}
           </p>
           <p className="flex gap-2">
@@ -46,11 +46,18 @@ const SupervisorProfile = ({
             {" "}
             <Phone className="text-primaryBlue w-4" /> {supervisor.fields.phone}
           </p>
-          <SectionTitle isAlignedLeft>obszar działania</SectionTitle>
+          <h2 className=" text-xl lg:text-2xl mt-4 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
+            obszar działania
+          </h2>
           {documentToReactComponents(supervisor.fields.scope)}
-          <SectionTitle isAlignedLeft>jednym zdaniem</SectionTitle>
+          <h2 className=" text-xl lg:text-2xl mt-4 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
+            {" "}
+            jednym zdaniem
+          </h2>
           {supervisor.fields.summary}
-          <SectionTitle isAlignedLeft>więcej informacji</SectionTitle>
+          <h2 className=" text-xl lg:text-2xl mt-4 mb-3 after:content-[''] after:block after:w-12 after:h-1 after:bg-primaryBlue after:mt-4">
+            więcej informacji
+          </h2>
           {documentToReactComponents(supervisor.fields.description)}
         </div>
       </div>
