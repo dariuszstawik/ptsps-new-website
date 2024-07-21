@@ -270,21 +270,30 @@ export default function SupervisorsMap({ content }) {
             <ul>
               {content
                 .filter((supervisor) => {
-                  if (region) {
-                    return supervisor.fields.mapScope
-                      ? supervisor.fields.mapScope
-                          .toString()
-                          .toUpperCase()
-                          .includes(["_", region.toUpperCase(), "_"].join(""))
-                      : "";
-                  } else if (city) {
-                    return (
-                      city.toUpperCase() ===
-                      supervisor.fields.city.toUpperCase()
-                    );
-                  } else {
-                    return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
-                  }
+                  // if (region) {
+                  //   return supervisor.fields.mapScope
+                  //     ? supervisor.fields.mapScope
+                  //         .toString()
+                  //         .toUpperCase()
+                  //         .includes(["_", region.toUpperCase(), "_"].join(""))
+                  //     : "";
+                  // } else if (city) {
+                  //   return (
+                  //     city.toUpperCase() ===
+                  //     supervisor.fields.city.toUpperCase()
+                  //   );
+                  // } else {
+                  //   return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
+                  // }
+                  return (
+                    supervisor.fields.mapScope &&
+                    supervisor.fields.mapScope
+                      .toString()
+                      .toUpperCase()
+                      .includes(["_", region.toUpperCase(), "_"].join("")) &&
+                    region.toUpperCase() !==
+                      supervisor.fields.region.toUpperCase()
+                  );
                 })
                 .map((supervisor) => (
                   <li
