@@ -11,6 +11,7 @@ export default function SupervisorsMap({ content }) {
   const [isHovered, setIsHovered] = useState(null);
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
+  const [cityRegion, setCityRegion] = useState("");
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const changeRegion = (e) => {
@@ -23,10 +24,16 @@ export default function SupervisorsMap({ content }) {
     setRegion("");
   };
 
-  const changeCityThroughMapPin = (city) => {
+  const changeCityThroughMapPin = (city, region) => {
     setCity(city);
     setRegion("");
+    setCityRegion(region);
   };
+
+  // const citiesList = [...content.map(city) => {
+  // city=content.firlds.city,
+  // cityRegion=content.firlds.region
+  // }]
 
   // const handleHover = () => {
   //   setIsHovered(!isHovered);
@@ -84,7 +91,13 @@ export default function SupervisorsMap({ content }) {
               }}
             >
               <div
-                onClick={() => changeCityThroughMapPin(supervisor.fields.city)}
+                onClick={() => {
+                  changeCityThroughMapPin(
+                    supervisor.fields.city,
+                    supervisor.fields.region
+                  );
+                  // changeRegion(supervisor.fields.region);
+                }}
                 onMouseEnter={() => setIsHovered(supervisor.sys.id)}
                 onMouseLeave={() => setIsHovered(null)}
                 className="relative"
@@ -155,7 +168,7 @@ export default function SupervisorsMap({ content }) {
           </div>
           <div className="">
             <h3 className="text-lg mt-4 mb-2 font-semibold">Miasto </h3>
-            <select
+            {/* <select
               onChange={changeCity}
               value={city}
               className="border border-primaryBlue rounded-md p-2"
@@ -164,6 +177,20 @@ export default function SupervisorsMap({ content }) {
               {content.map((supervisor) => (
                 <option key={supervisor.sys.id} value={supervisor.fields.city}>
                   {supervisor.fields.city}
+                </option>
+              ))}
+            </select> */}
+            <select
+              onChange={changeCity}
+              value={city}
+              className="border border-primaryBlue rounded-md p-2"
+            >
+              <option value="">Wybierz</option>
+              {[
+                ...new Set(content.map((supervisor) => supervisor.fields.city)),
+              ].map((city) => (
+                <option key={city} value={city}>
+                  {city}
                 </option>
               ))}
             </select>
@@ -262,68 +289,91 @@ export default function SupervisorsMap({ content }) {
                 <hr className="mt-2 w-full" />
               </li>
             ))}
+          {/* 
+          {content.filter((supervisor) => {
+            return (
+              supervisor.fields.mapScope &&
+              supervisor.fields.mapScope
+                .toString()
+                .toUpperCase()
+                .includes(["_", region.toUpperCase(), "_"].join("")) &&
+              region.toUpperCase() !== supervisor.fields.region.toUpperCase()
+            );
+          })} */}
+          {/* {(region || city) && (
+            <Collapse
+              // title="W tym rejonie działają również..."
+              title="Wszyscy superwizorzy działający w tym rejonie"
+              isInSupervisorsMap
+            >
+              <ul>
+                {content
+                  .filter((supervisor) => {
+                    // if (region) {
+                    //   return supervisor.fields.mapScope
+                    //     ? supervisor.fields.mapScope
+                    //         .toString()
+                    //         .toUpperCase()
+                    //         .includes(["_", region.toUpperCase(), "_"].join(""))
+                    //     : "";
+                    // } else if (city) {
+                    //   return (
+                    //     city.toUpperCase() ===
+                    //     supervisor.fields.city.toUpperCase()
+                    //   );
+                    // } else {
+                    //   return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
+                    // }
+                    return (
+                      supervisor.fields.mapScope &&
+                      supervisor.fields.mapScope
+                        .toString()
+                        .toUpperCase()
+                        .includes(["_", cityRegion.toUpperCase(), "_"].join(""))
+                    );
+                    //   &&
+                    // // city
+                    // // ? cityRegion.toUpperCase() !==
+                    // //     supervisor.fields.region.toUpperCase()
+                    // // : "";
+                    // if (city) {
+                    //   return cityRegion.toUpperCase() !==
+                    //     supervisor.fields.region.toUpperCase();
+                    // }
+                    // else {
+                    //   return true;
+                    // }
+                  })
+                  .map((supervisor) => (
+                    <li
+                      key={supervisor.sys.id}
+                      className="flex flex-col mt-6 w-full"
+                    >
+                      <div className="pb-2 flex flex-col gap-2">
+                        <h3 className="text-lg m-0 text-primaryBlue font-semibold">
+                          {supervisor.fields.name}
+                        </h3>
+                        <div className="flex justify-between">
+                          <p className="flex gap-2 m-0">
+                            <MapPin className="text-primaryBlue w-5" />
+                            {supervisor.fields.city}
+                          </p>
 
-          {/* <Collapse
-            title="W tym rejonie działają również..."
-            isInSupervisorsMap
-          >
-            <ul>
-              {content
-                .filter((supervisor) => {
-                  // if (region) {
-                  //   return supervisor.fields.mapScope
-                  //     ? supervisor.fields.mapScope
-                  //         .toString()
-                  //         .toUpperCase()
-                  //         .includes(["_", region.toUpperCase(), "_"].join(""))
-                  //     : "";
-                  // } else if (city) {
-                  //   return (
-                  //     city.toUpperCase() ===
-                  //     supervisor.fields.city.toUpperCase()
-                  //   );
-                  // } else {
-                  //   return false; // Jeśli ani region, ani city nie jest zdefiniowane, odfiltruj wszystko
-                  // }
-                  return (
-                    supervisor.fields.mapScope &&
-                    supervisor.fields.mapScope
-                      .toString()
-                      .toUpperCase()
-                      .includes(["_", region.toUpperCase(), "_"].join("")) &&
-                    region.toUpperCase() !==
-                      supervisor.fields.region.toUpperCase()
-                  );
-                })
-                .map((supervisor) => (
-                  <li
-                    key={supervisor.sys.id}
-                    className="flex flex-col mt-6 w-full"
-                  >
-                    <div className="pb-2 flex flex-col gap-2">
-                      <h3 className="text-lg m-0 text-primaryBlue font-semibold">
-                        {supervisor.fields.name}
-                      </h3>
-                      <div className="flex justify-between">
-                        <p className="flex gap-2 m-0">
-                          <MapPin className="text-primaryBlue w-5" />
-                          {supervisor.fields.city}
-                        </p>
-
-                        <Link
-                          href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
-                        >
-                          <button className="text-primaryBlue ml-auto">
-                            wyświetl profil &rarr;
-                          </button>
-                        </Link>
+                          <Link
+                            href={`/superwizja/lista-superwizorow/${supervisor.fields.slug}`}
+                          >
+                            <button className="text-primaryBlue ml-auto">
+                              wyświetl profil &rarr;
+                            </button>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                    <hr className="mt-2 w-full" />
-                  </li>
-                ))}
-            </ul>
-          </Collapse> */}
+                      <hr className="mt-2 w-full" />
+                    </li>
+                  ))}
+              </ul>
+            </Collapse>
+          )} */}
         </ul>
       </div>
     </div>

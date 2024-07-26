@@ -54,12 +54,12 @@ export default function Footer() {
                     </a> */}
                   </div>
                 </div>
-                <div className="mb-6 w-full md:w-1/2 xl:w-1/3 px-3">
+                {/* <div className="mb-6 w-full md:w-1/2 xl:w-1/3 px-3">
                   <h5 className="mb-4 font-bold">Bezpieczny kontakt</h5>
                   <p className="leading-loose my-0">Aneta Zborowska</p>
                   <p className="leading-loose my-0">osobazaufania@ptsps.pl </p>
                   <p className="leading-loose my-0">+48 732 988 806</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

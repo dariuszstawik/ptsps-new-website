@@ -74,23 +74,20 @@ export default function Kontakt() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
+
+            {/* <div className="flex flex-col gap-4">
               <strong>Bezpieczny kontakt</strong>
-              {/* <div className="-ml-2">
-              <SectionSubtitle isAlignedLeft>
-                Bezpieczny kontakt
-              </SectionSubtitle>
-            </div> */}
               <div className="flex flex-col gap-2">
                 <div className="">Osoba Zaufania: Aneta Zborowska</div>
-                {/* <div> Aneta Zborowska</div> */}
+
                 <div className="flex gap-2">
                   <Mail className="text-primaryBlue w-5" />{" "}
                   osobazaufania@ptsps.pl
                   <Phone className="text-primaryBlue w-4" /> +48 732 988 806
                 </div>
               </div>
-            </div>
+            </div> */}
+
             <div className="flex flex-col gap-4">
               <strong>Numer konta (mBank)</strong>
               {/* <div className="-ml-2">
