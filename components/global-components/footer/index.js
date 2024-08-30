@@ -32,7 +32,9 @@ export default function Footer() {
               <div className="w-full xl:w-1/2 flex flex-wrap -mx-3 justify-start xl:justify-end gap-10">
                 <div className="mb-6 w-full md:w-1/2 xl:w-1/3 xl:mr-6 px-3">
                   <h5 className="mb-4 font-bold">Biuro</h5>
-                  <p className="leading-loose my-0">biuro@ptsps.pl</p>
+                  <p className="leading-loose my-0">
+                    maciej.sosnowski@ptsps.pl
+                  </p>
                   <div className="flex gap-5 mt-6">
                     <a
                       href="https://www.facebook.com/superwizja.pracy.socjalnej"

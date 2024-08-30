@@ -27,7 +27,8 @@ export default function Kontakt() {
             <div className="flex flex-col gap-4">
               <strong>Kontakt mailowy</strong>
               <div className="flex gap-2">
-                <Mail className="text-primaryBlue w-5" /> biuro@ptsps.pl
+                <Mail className="text-primaryBlue w-5" />{" "}
+                maciej.sosnowski@ptsps.pl
               </div>
             </div>
           </div>
