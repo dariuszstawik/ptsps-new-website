@@ -42,6 +42,16 @@ export default function HeroSliderSection() {
         </HeroSlide>
 
         <HeroSlide
+          title="Znajdź superwizora"
+          buttonTitle="Zobacz więcej"
+          buttonHref="/superwizja/lista-superwizorow"
+          img="/znajdz-superwizora2.jpg"
+        >
+          Sprawdź listę superwizorów pracy socjalnej i&nbsp;znajdź specjalistę
+          ze swojego regionu.
+        </HeroSlide>
+
+        <HeroSlide
           title="Biblioteka"
           buttonTitle="Zobacz więcej"
           buttonHref="/biblioteka"

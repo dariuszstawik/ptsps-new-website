@@ -127,8 +127,8 @@ const navbarData = [
       {
         id: 5,
         title: "Lista superwizorów pracy socjalnej",
-        path: "/superwizja/lista-superwizorow-pracy-socjalnej",
-        isVisible: false,
+        path: "/superwizja/lista-superwizorow",
+        isVisible: true,
       },
       {
         id: 6,

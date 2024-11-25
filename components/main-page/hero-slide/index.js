@@ -15,7 +15,7 @@ export default function HeroSlide({
       <div className="w-full lg:w-2/5 h-full flex flex-col justify-center items-start gap-10 px-10 lg:pl-28 lg:pr-20 py-10">
         {/* <Slide direction="up"> */}
         <div>
-          <h1 className="text-2xl lg:text-4xl font-bold text-white z-40 text-center lg:leading-relaxed uppercase">
+          <h1 className="text-2xl lg:text-4xl font-bold text-white z-40 lg:leading-relaxed uppercase">
             {title}
           </h1>
           <div className="mt-4 w-20 h-1 rounded-sm bg-white" />
