@@ -33,7 +33,7 @@ export default function Kontakt() {
                     Polskie Towarzystwo Superwizji Pracy Socjalnej
                   </span>
                   <span className="block">
-                    00-001 Warszawa, Skrytka Pocztowa nr 180
+                    00-001 Warszawa, Skrytka Pocztowa nr 382
                   </span>
                 </div>
               </div>
