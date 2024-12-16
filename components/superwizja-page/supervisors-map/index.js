@@ -16,12 +16,20 @@ export default function SupervisorsMap({ content }) {
 
   const changeRegion = (e) => {
     setRegion(e.target.value);
+    setCityRegion(e.target.value);
     setCity("");
   };
 
   const changeCity = (e) => {
     setCity(e.target.value);
     setRegion("");
+    setCityRegion(
+      content.find((supervisor) => supervisor.fields.city === e.target.value)
+        ? content.find(
+            (supervisor) => supervisor.fields.city === e.target.value
+          ).fields.region
+        : ""
+    );
   };
 
   const changeCityThroughMapPin = (city, region) => {
@@ -300,10 +308,10 @@ export default function SupervisorsMap({ content }) {
               region.toUpperCase() !== supervisor.fields.region.toUpperCase()
             );
           })} */}
-          {/* {(region || city) && (
+          {(region || city) && (
             <Collapse
               // title="W tym rejonie działają również..."
-              title="Wszyscy superwizorzy działający w tym rejonie"
+              title="Wszyscy superwizorzy działający w tym rejonie (rozwiń)"
               isInSupervisorsMap
             >
               <ul>
@@ -373,7 +381,7 @@ export default function SupervisorsMap({ content }) {
                   ))}
               </ul>
             </Collapse>
-          )} */}
+          )}
         </ul>
       </div>
     </div>

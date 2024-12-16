@@ -6,7 +6,7 @@ export default function Collapse({ title, children, isInSupervisorsMap }) {
       <input type="checkbox" className="m-0 p-0" />
       <div
         className={`collapse-title text-base ${
-          isInSupervisorsMap && "text-lg mt-4 mb-2  "
+          isInSupervisorsMap && "text-lg mt-4 -mb-2 text-primaryBlue"
         }`}
       >
         <ChevronDown className="inline-block text-primaryBlue -ml-4 pl-0" />{" "}
