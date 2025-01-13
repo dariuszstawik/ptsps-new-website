@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function LogoCarousel() {
+export default function LogoCarousel({ logos }) {
   const settingsLg = {
     dots: false,
     arrows: false,
@@ -28,7 +28,18 @@ export default function LogoCarousel() {
     <section className="bg-white py-10 px-0 lg:p-8 lg:pt-4">
       <div className="hidden lg:block">
         <Slider {...settingsLg}>
-          <div className="w-56 h-56  flex content-center p-8">
+          {logos.map((logo) => (
+            <div className="w-56 h-56 flex content-center p-8" key={logo.id}>
+              <a href={logo.fields.link} target="_blank">
+                <img
+                  src={logo.fields.image.fields.file.url}
+                  alt={logo.fields.name}
+                  className="mx-auto max-h-[85%]"
+                />
+              </a>
+            </div>
+          ))}
+          {/* <div className="w-56 h-56  flex content-center p-8">
             <a href="https://unicef.pl/" target="_blank">
               <img
                 src="/logo-unicef.jpg"
@@ -86,13 +97,24 @@ export default function LogoCarousel() {
                 className="mx-auto max-h-[80%]"
               />
             </a>
-          </div>
+          </div> */}
         </Slider>
       </div>
 
       <div className="block lg:hidden">
         <Slider {...settingsSm}>
-          <div className="w-56 h-56  flex content-center p-8">
+          {logos.map((logo) => (
+            <div className="w-56 h-56 flex content-center p-8" key={logo.id}>
+              <a href={logo.fields.link} target="_blank">
+                <img
+                  src={logo.fields.image.fields.file.url}
+                  alt={logo.fields.name}
+                  className="mx-auto max-h-[85%]"
+                />
+              </a>
+            </div>
+          ))}
+          {/* <div className="w-56 h-56  flex content-center p-8">
             <a href="https://unicef.pl/" target="_blank">
               <img
                 src="/logo-unicef.jpg"
@@ -150,7 +172,7 @@ export default function LogoCarousel() {
                 className="mx-auto max-h-[80%]"
               />
             </a>
-          </div>
+          </div> */}
         </Slider>
       </div>
     </section>

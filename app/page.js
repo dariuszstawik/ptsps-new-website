@@ -66,6 +66,7 @@ export default async function Home() {
   const slider = (await getContentfulContent()).slider;
   const blueSection = (await getContentfulContent()).blueSection;
   const graySection = (await getContentfulContent()).graySection;
+  const logos = (await getContentfulContent()).logos;
 
   console.log("---------");
   console.log(blueSection);
@@ -163,7 +164,7 @@ export default async function Home() {
       </section>
       <section className="p-16 pt-20 pb-12 overflow-x-hidden">
         <SectionTitle>Współpraca</SectionTitle>
-        <LogoCarousel />
+        <LogoCarousel logos={logos} />
       </section>
     </div>
   );
