@@ -1,8 +1,20 @@
 import PageHeader from "@/components/global-components/page-header";
 import ParagraphWithImageOnTheLeft from "@/components/global-components/paragraph-with-image-on-the-left";
 import SingleArticle from "@/components/global-components/single-article";
+import { client } from "@/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function oNas() {
+async function getContentfulContent() {
+  const resAbout = await client.getEntries({
+    content_type: "about",
+  });
+
+  return resAbout.items[0];
+}
+
+export default async function oNas() {
+  const about = await getContentfulContent();
+
   return (
     <div>
       <PageHeader>Organizacja</PageHeader>
@@ -26,13 +38,18 @@ export default function oNas() {
       </SingleArticle> */}
       <div className="my-10">
         <ParagraphWithImageOnTheLeft
-          title="O nas"
-          buttonTitle="Nasze projekty"
-          buttonLink="/projekty"
+          // title="O nas"
+          title={about.fields.title || ""}
+          // buttonTitle="Nasze projekty"
+          // buttonLink="/projekty"
+          buttonTitle={about.fields.buttonTitle || ""}
+          buttonLink={about.fields.buttonLink || ""}
           // img="/onas3.jpg"
           isOnAboutPage
         >
-          <p className=" font-bold">
+          {documentToReactComponents(about.fields.body)}
+
+          {/* <p className=" font-bold">
             Jesteśmy organizacją pozarządową działającą od 2015 roku na rzecz
             profesjonalizacji pomocy społecznej. Za podstawowe narzędzie
             uznaliśmy superwizję – stąd nasze działanie koncentruja się na
@@ -58,7 +75,7 @@ export default function oNas() {
             jak i osoby zajmujące się szkoleniami w obszarze pomocy społecznej,
             metodyków pracy socjalnej oraz osoby zajmujące się pomocą społeczną
             z perspektywy naukowej.
-          </p>
+          </p> */}
         </ParagraphWithImageOnTheLeft>
       </div>
     </div>
