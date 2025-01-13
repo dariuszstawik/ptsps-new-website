@@ -6,8 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronLeftSquare, ChevronRight } from "lucide-react";
 import TestimonialCard from "../testimonial-card";
 import SectionTitle from "../section-title";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function TestimonialCarousel() {
+export default function TestimonialCarousel({ testimonials }) {
   const settingsLg = {
     dots: false,
     arrows: true,
@@ -64,7 +65,17 @@ export default function TestimonialCarousel() {
     <section className="bg-white pb-10 px-0 lg:p-6 pt-6 lg:pt-10 overflow-x-hidden">
       <div className="hidden lg:block">
         <Slider {...settingsLg}>
-          <TestimonialCard
+          {testimonials.map((testimonial) => (
+            <TestimonialCard
+              name={testimonial.fields.name}
+              title={testimonial.fields.role}
+              img={testimonial.fields.image.fields.file.url}
+            >
+              {documentToReactComponents(testimonial.fields.body)}
+            </TestimonialCard>
+          ))}
+
+          {/* <TestimonialCard
             name="Beata Kisiel"
             title="Pracowniczka socjalna"
             img="/Beata-Kisiel.jpg"
@@ -136,7 +147,7 @@ export default function TestimonialCarousel() {
             Potrzebujemy wspólnie zadbać, by przywrócić zaufanie do superwizji
             wśród pracowników socjalnych i uczynić superwizję faktycznie
             dostępną dla wszystkich pomagających.
-          </TestimonialCard>
+          </TestimonialCard> */}
         </Slider>
       </div>
 

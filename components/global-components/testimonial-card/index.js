@@ -20,7 +20,7 @@ export default function TestimonialCard({ name, title, img, children }) {
               fill="currentColor"
             />
           </svg>
-          <p className="my-4 leading-loose text-blueGray-400">{children}</p>
+          <div className="my-4 leading-loose text-blueGray-400">{children}</div>
         </span>
         <div className="flex flex-col lg:flex-row items-start lg:items-center">
           <img

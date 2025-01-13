@@ -54,19 +54,30 @@ async function getContentfulContent() {
     content_type: "logos",
   });
 
+  const resTestimonials = await client.getEntries({
+    content_type: "testimonials",
+  });
+
   return {
     slider: resSlider.items,
     blueSection: resBlueSection.items[0],
     graySection: resGraySection.items[0],
     logos: resLogos.items,
+    testimonials: resTestimonials.items,
   };
 }
 
 export default async function Home() {
-  const slider = (await getContentfulContent()).slider;
-  const blueSection = (await getContentfulContent()).blueSection;
-  const graySection = (await getContentfulContent()).graySection;
-  const logos = (await getContentfulContent()).logos;
+  // const slider = (await getContentfulContent()).slider;
+  // const blueSection = (await getContentfulContent()).blueSection;
+  // const graySection = (await getContentfulContent()).graySection;
+
+  const contentfulContent = await getContentfulContent();
+  const slider = contentfulContent.slider;
+  const blueSection = contentfulContent.blueSection;
+  const graySection = contentfulContent.graySection;
+  const logos = contentfulContent.logos;
+  const testimonials = contentfulContent.testimonials;
 
   console.log("---------");
   console.log(blueSection);
@@ -118,7 +129,7 @@ export default async function Home() {
 
       <section className="p-16 py-20">
         <SectionTitle>Okiem ekspertów i praktyków</SectionTitle>
-        <TestimonialsCarousel />
+        <TestimonialsCarousel testimonials={testimonials} />
       </section>
 
       <section className="p-10 pt-24 bg-slate-200">
