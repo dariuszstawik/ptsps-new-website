@@ -50,10 +50,15 @@ async function getContentfulContent() {
     content_type: "slider",
   });
 
+  const resLogos = await client.getEntries({
+    content_type: "logos",
+  });
+
   return {
     slider: resSlider.items,
     blueSection: resBlueSection.items[0],
     graySection: resGraySection.items[0],
+    logos: resLogos.items,
   };
 }
 
@@ -69,7 +74,7 @@ export default async function Home() {
 
   return (
     <div>
-      <HeroSliderSection />
+      <HeroSliderSection slider={slider} />
 
       <div className="mb-32">
         <AboutSection />

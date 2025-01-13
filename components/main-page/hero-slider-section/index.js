@@ -5,7 +5,7 @@ import Link from "next/link";
 import HeroSlide from "../hero-slide";
 import Slider from "react-slick";
 
-export default function HeroSliderSection() {
+export default function HeroSliderSection({ slider }) {
   const settingsLg = {
     dots: false,
     arrows: false,
@@ -20,17 +20,19 @@ export default function HeroSliderSection() {
   return (
     <div className="slider">
       <Slider {...settingsLg}>
-        {/* <HeroSlide
-        title="PTSPS"
-        buttonTitle="Poznaj nas"
-        buttonHref="/organizacja/o-nas"
-        img="/onas5.jpg"
-      >
-        Polskie Towarzystwo Superwizji Pracy Socjalnej działa od 2015 roku na
-        rzecz profesjonalizacji pomocy społecznej.
-      </HeroSlide> */}
+        {slider.map((item) => (
+          <HeroSlide
+            key={item.sys.id}
+            title={item.fields.title}
+            buttonTitle={item.fields.buttonTitle}
+            buttonHref={item.fields.buttonLink}
+            img={item.fields.image.fields.file.url}
+          >
+            {item.fields.body}
+          </HeroSlide>
+        ))}
 
-        <HeroSlide
+        {/* <HeroSlide
           title="Unicef 2022-2024"
           buttonTitle="Więcej o projekcie"
           buttonHref="/projekty/unicef-2022-2024"
@@ -59,7 +61,7 @@ export default function HeroSliderSection() {
         >
           Pobierz bezpłatnie ostatnie numery magazynu "SPS: Superwizja Pracy
           Socjalnej"
-        </HeroSlide>
+        </HeroSlide> */}
       </Slider>
     </div>
   );
