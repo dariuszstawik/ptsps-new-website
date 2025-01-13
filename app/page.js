@@ -13,9 +13,60 @@ import ProjectsSection from "@/components/main-page/projects-section";
 import Testimonials from "@/components/main-page/testimonials";
 import { TeamSection } from "@/components/organizacja-page/team-section";
 import SupervisorsMap from "@/components/superwizja-page/supervisors-map";
+import { client } from "@/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 
-export default function Home() {
+// async function getContentfulContent() {
+//   const resSlider = await client.getEntries({
+//     content_type: "slider",
+//   });
+
+//   const resBlueSection = await client.getEntries({
+//     content_type: "blueSection",
+//   });
+
+//   const resGraySection = await client.getEntries({
+//     content_type: "graySection",
+//   });
+
+//   return {
+//     slider: resSlider.items,
+//     blueSection: resBlueSection.items,
+//     graySection: resGraySection.items,
+//   };
+// }
+
+async function getContentfulContent() {
+  const resBlueSection = await client.getEntries({
+    content_type: "blueSection",
+  });
+
+  const resGraySection = await client.getEntries({
+    content_type: "graySection",
+  });
+
+  const resSlider = await client.getEntries({
+    content_type: "slider",
+  });
+
+  return {
+    slider: resSlider.items,
+    blueSection: resBlueSection.items[0],
+    graySection: resGraySection.items[0],
+  };
+}
+
+export default async function Home() {
+  const slider = (await getContentfulContent()).slider;
+  const blueSection = (await getContentfulContent()).blueSection;
+  const graySection = (await getContentfulContent()).graySection;
+
+  console.log("---------");
+  console.log(blueSection);
+  console.log(graySection);
+  console.log(slider);
+
   return (
     <div>
       <HeroSliderSection />
@@ -27,13 +78,25 @@ export default function Home() {
 
       <div className="bg-darkBlue py-8">
         <ParagraphWithImageOnTheLeft
-          title="Czym jest superwizja pracy socjalnej?"
-          img="onas4.jpg"
+          // title="Czym jest superwizja pracy socjalnej?"
+          title={blueSection.fields.title ? blueSection.fields.title : ""}
+          // img="onas4.jpg"
+          img={
+            blueSection.fields.image
+              ? blueSection.fields.image.fields.file.url
+              : ""
+          }
           hasBlueBackground
-          buttonTitle={"Więcej o superwizji"}
-          buttonLink={"/superwizja"}
+          // buttonTitle={"Więcej o superwizji"}
+          // buttonLink={"/superwizja"}
+          buttonTitle={
+            blueSection.fields.buttonTitle ? blueSection.fields.buttonTitle : ""
+          }
+          buttonLink={
+            blueSection.fields.buttonLink ? blueSection.fields.buttonLink : ""
+          }
         >
-          Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
+          {/* Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
           służący rozwiązaniu trudności merytorycznych i emocjonalnych
           związanych z wykonywaniem pracy. To dwustronny proces pomagający
           poszerzać świadomość, rozwijać umiejętności, osiągać lepsze wyniki,
@@ -41,7 +104,8 @@ export default function Home() {
           praktykę i sprzężenie zwrotne (feedback). Warunkiem powodzenia tak
           zaplanowanego przedsięwzięcia jest zgoda uczestników superwizji na
           ujawnienie swoich doświadczeń w pracy z ludźmi i na ich analizę (Wódz,
-          Leśniak-Berek, 2007)
+          Leśniak-Berek, 2007) */}
+          {documentToReactComponents(blueSection.fields.body)}
           <span className="block h-4" />
         </ParagraphWithImageOnTheLeft>
       </div>
@@ -52,23 +116,43 @@ export default function Home() {
       </section>
 
       <section className="p-10 pt-24 bg-slate-200">
-        <SectionTitle>Aktualny projekt</SectionTitle>
+        {/* <SectionTitle>Aktualny projekt</SectionTitle> */}
+        <SectionTitle>
+          {graySection.fields.sectionTitle
+            ? graySection.fields.sectionTitle
+            : ""}
+        </SectionTitle>
         <div className="-mt-4">
           <ParagraphWithImageOnTheLeft
-            title="Wsparcie rozwoju pracowników polskiego systemu pomocy społecznej"
-            img="/unicef-logo.png"
-            buttonTitle="Więcej o projekcie"
-            buttonLink="/projekty/unicef-2022-2024"
+            // title="Wsparcie rozwoju pracowników polskiego systemu pomocy społecznej"
+            // img="/unicef-logo.png"
+            // buttonTitle="Więcej o projekcie"
+            // buttonLink="/projekty/unicef-2022-2024"
+            title={graySection.fields.title ? graySection.fields.title : ""}
+            img={
+              graySection.fields.image
+                ? graySection.fields.image.fields.file.url
+                : ""
+            }
+            buttonTitle={
+              graySection.fields.buttonTitle
+                ? graySection.fields.buttonTitle
+                : ""
+            }
+            buttonLink={
+              graySection.fields.buttonLink ? graySection.fields.buttonLink : ""
+            }
             hasSectionSubtitle
           >
-            Projekt realizowany we współpracy z Biurem Reagowania na Potrzeby
+            {/* Projekt realizowany we współpracy z Biurem Reagowania na Potrzeby
             Uchodźców UNICEF. Jest odpowiedzią na kryzys uchodźczy związany z
             wybuchem pełnoskalowej wojny w Ukrainie. Skala migracji z Ukrainy do
             Polski spowodowała znaczne obciążenie naszego systemu pomocy
             społecznej i postawiła przed pracownikami pomocy społecznej nowe
             zadania i nowe wymagania. Celem projektu jest wsparcie pracowników
             (superwizyjne i edukacyjne), tak by mogli efektywnie pomagać osobom
-            z Ukrainy, które schroniły się w naszym kraju.
+            z Ukrainy, które schroniły się w naszym kraju. */}
+            {documentToReactComponents(graySection.fields.body)}
           </ParagraphWithImageOnTheLeft>
         </div>
       </section>
