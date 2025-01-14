@@ -135,6 +135,10 @@ ol li p {
   @apply list-disc pl-4;
 }
 
+.paragraphWithoutMargin p {
+  @apply m-0;
+}
+
 div.slider .slick-slide {
   visibility: hidden;
 }

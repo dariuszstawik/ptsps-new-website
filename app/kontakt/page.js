@@ -1,9 +1,30 @@
 import PageHeader from "@/components/global-components/page-header";
 import ParagraphWithImageOnTheLeft from "@/components/global-components/paragraph-with-image-on-the-left";
 import SectionSubtitle from "@/components/global-components/section-subtitle";
+import { client } from "@/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Mail, MapPin, Phone, User } from "lucide-react";
 
-export default function Kontakt() {
+async function getContentfulContent() {
+  const resContact = await client.getEntries({
+    content_type: "contact",
+  });
+
+  const resBoardMember = await client.getEntries({
+    content_type: "boardMember",
+  });
+
+  return {
+    contact: resContact.items[0],
+    boardMember: resBoardMember.items,
+  };
+}
+
+export default async function Kontakt() {
+  const content = await getContentfulContent();
+  const contact = content.contact;
+  const boardMember = content.boardMember;
+
   return (
     <div>
       <PageHeader>Skontaktuj się</PageHeader>
@@ -20,7 +41,7 @@ export default function Kontakt() {
               <div className="flex flex-col gap-4">
                 <div className="flex gap-2">
                   <Mail className="text-primaryBlue w-5" />{" "}
-                  maciej.sosnowski@ptsps.pl
+                  {contact.fields.office}
                 </div>
               </div>
             </div>
@@ -28,53 +49,44 @@ export default function Kontakt() {
               <strong>Adres do korespondencji tradycyjnej</strong>
               <div className="flex gap-2 items-center">
                 <MapPin className="text-primaryBlue" />
-                <div className="">
-                  <span className="block">
+                <div className="paragraphWithoutMargin">
+                  {/* <span className="block">
                     Polskie Towarzystwo Superwizji Pracy Socjalnej
                   </span>
                   <span className="block">
                     00-001 Warszawa, Skrytka Pocztowa nr 382
-                  </span>
+                  </span> */}
+                  {documentToReactComponents(contact.fields.mailingAddress)}
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2">
-              <strong>Zarząd</strong>
-              <div className="-ml-2">
-                {/* <SectionSubtitle isAlignedLeft>Zarząd</SectionSubtitle> */}
-              </div>
+
+            {contact.fields.isBoardContactVisible && (
               <div className="flex flex-col gap-2">
-                <div className="">
-                  {/* <User className="text-primaryBlue" /> */}
-                  Maciej Sosnowski
-                </div>
-                <div className="flex gap-2">
-                  <Mail className="text-primaryBlue w-5" />{" "}
-                  maciej.sosnowski@ptsps.pl
-                  <Phone className="text-primaryBlue w-4" /> +48 663 767 573
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="">
-                  {/* <User className="text-primaryBlue" />  */}
-                  Marek Jaros
-                </div>
-                <div className="flex gap-2">
-                  <Mail className="text-primaryBlue w-5" /> marek.jaros@ptsps.pl
-                  <Phone className="text-primaryBlue w-4" /> +48 500 273 018
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="">
-                  {/* <User className="text-primaryBlue" /> */}
-                  Marek Lasota
-                </div>
-                <div className="flex gap-2">
-                  <Mail className="text-primaryBlue w-5" />{" "}
-                  marek.lasota@ptsps.pl
+                <strong>Zarząd</strong>
+                <div className="-ml-2">
+                  {boardMember.map((member) => (
+                    <div key={member.sys.id} className="flex flex-col gap-2">
+                      <div className="">{member.fields.name}</div>
+                      <div className="flex gap-2">
+                        {member.fields.email && (
+                          <>
+                            <Mail className="text-primaryBlue w-5" />
+                            {member.fields.email}
+                          </>
+                        )}
+                        {member.fields.phone && (
+                          <>
+                            <Phone className="text-primaryBlue w-4" />
+                            {member.fields.phone}
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            )}
 
             {/* <div className="flex flex-col gap-4">
               <strong>Bezpieczny kontakt</strong>
@@ -90,27 +102,11 @@ export default function Kontakt() {
             </div> */}
 
             <div className="flex flex-col gap-4">
-              <strong>Numer konta (mBank)</strong>
-              {/* <div className="-ml-2">
-              <SectionSubtitle isAlignedLeft>
-                Numer konta (mBank)
-              </SectionSubtitle>
-            </div> */}
-              <div>51 1140 2004 0000 3202 8248 8179</div>
-              <div>
-                <span className="">IBAN</span> PL51 1140 2004 0000 3202 8248
-                8179
+              <strong>Numer konta {contact.fields.bank || ""}</strong>
+
+              <div className="paragraphWithoutMargin">
+                {documentToReactComponents(contact.fields.bankAccount)}
               </div>
-              <div>
-                <span className="">BIC (SWIFT)</span> BREXPLPWMBK
-              </div>
-              {/* <div className="flex flex-col gap-2">
-              <div className="">Osoba Zaufana: Aneta Zborowska</div>
-              <div className="flex gap-2">
-                <Mail className="text-primaryBlue w-5" /> osobazaufana@ptsps.pl
-                <Phone className="text-primaryBlue w-4" /> +48 500 273 018
-              </div>
-            </div> */}
             </div>
           </div>
         </ParagraphWithImageOnTheLeft>
