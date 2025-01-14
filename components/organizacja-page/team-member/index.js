@@ -9,7 +9,7 @@ export default function TeamMember({ name, role, children, img }) {
       <div className="flex flex-col justify-center mt-2">
         <p className="text-lg font-bold">{name}</p>
         <p className="mb-4 text-sm text-primaryBlue">{role}</p>
-        <p className="text-sm tracking-wide text-gray-800">{children}</p>
+        <div className="text-sm tracking-wide text-gray-800">{children}</div>
       </div>
     </div>
   );

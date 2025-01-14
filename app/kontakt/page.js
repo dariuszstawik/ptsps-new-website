@@ -32,7 +32,8 @@ export default async function Kontakt() {
         <ParagraphWithImageOnTheLeft
           hasSubtitle
           title="Kontakt"
-          img="/contact.JPG"
+          // img="/contact.JPG"
+          img={contact.fields.image.fields.file.url}
         >
           <div className="flex flex-col gap-8 mt-4">
             <div className="flex flex-col gap-6">
