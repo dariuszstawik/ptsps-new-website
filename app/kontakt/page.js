@@ -62,11 +62,14 @@ export default async function Kontakt() {
             </div>
 
             {contact.fields.isBoardContactVisible && (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-4">
                 <strong>Zarząd</strong>
-                <div className="-ml-2">
+                <div className="">
                   {boardMember.map((member) => (
-                    <div key={member.sys.id} className="flex flex-col gap-2">
+                    <div
+                      key={member.sys.id}
+                      className="flex flex-col gap-2 mb-4"
+                    >
                       <div className="">{member.fields.name}</div>
                       <div className="flex gap-2">
                         {member.fields.email && (
