@@ -91,6 +91,24 @@ export default async function Kontakt() {
                 </div>
               </div>
             )}
+            {contact.fields.komisjaEtycznaEmail && (
+              <div className="flex flex-col gap-6">
+                <strong>Komisja Etyczna PTSPS</strong>
+
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-2">
+                    <Mail className="text-primaryBlue w-5" />{" "}
+                    {contact.fields.komisjaEtycznaEmail}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {contact.fields.AdditionalContent && (
+              <div className="flex flex-col gap-4">
+                {documentToReactComponents(contact.fields.AdditionalContent)}
+              </div>
+            )}
 
             {/* <div className="flex flex-col gap-4">
               <strong>Bezpieczny kontakt</strong>
