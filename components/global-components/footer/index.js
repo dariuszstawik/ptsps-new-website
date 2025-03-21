@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Logo from "../logo";
+import { client } from "@/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // async function getContentfulContent(locale) {
 //   const resContact = await client.getEntries({
@@ -9,7 +11,20 @@ import Logo from "../logo";
 //   return resContact.items[0];
 // }
 
-export default function Footer() {
+async function getContentfulContent() {
+  const resFooter = await client.getEntries({
+    content_type: "footer",
+  });
+
+  return resFooter.items[0];
+}
+
+export default async function Footer() {
+  const footer = await getContentfulContent();
+
+  console.log(",,,,,,,,,,,,,,,,,,");
+  console.log(footer);
+
   return (
     <div className="w-full my-0 py-0">
       <section className="relative bg-darkBlue mt-0 text-white mb-0 pt-16">
@@ -22,44 +37,63 @@ export default function Footer() {
                 </div> */}
                 <h1 className="pb-4">PTSPS</h1>
                 <div>
-                  <p>
-                    {" "}
-                    Polskie Towarzystwo Superwizji Pracy Socjalnej działa od
-                    2015 roku na rzecz profesjonalizacji pomocy społecznej.
-                  </p>
+                  <div>
+                    {footer.fields.description}{" "}
+                    {/* {footer.fields.IIColumnTitle} */}
+                  </div>
                 </div>
               </div>
               <div className="w-full xl:w-1/2 flex flex-wrap -mx-3 justify-start xl:justify-end gap-10">
                 <div className="mb-6 w-full md:w-1/2 xl:w-1/3 xl:mr-6 px-3">
-                  <h5 className="mb-4 font-bold">Biuro</h5>
-                  <p className="leading-loose my-0">biuro@ptsps.pl</p>
+                  <h5 className="mb-4 font-bold">
+                    {footer.fields.IIColumnTitle}
+                  </h5>
+                  <p className="leading-loose my-0">
+                    {footer.fields.IIColumnBody}
+                  </p>
                   <div className="flex gap-5 mt-6">
-                    <a
-                      href="https://www.facebook.com/superwizja.pracy.socjalnej"
-                      target="_blank"
-                    >
-                      <img src="/facebook.svg" alt="facebook" className="w-8" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/polskie-towarzystwo-superwizji-pracy-socjalnej/"
-                      target="_blank"
-                    >
-                      <img src="/linkedin.svg" alt="linkedin" className="w-8" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/superwizjaps/"
-                      target="_blank"
-                    >
-                      <img src="/instagram1.svg" className="w-8" />
-                    </a>
+                    {footer.fields.facebookLink && (
+                      <a href={footer.fields.facebookLink} target="_blank">
+                        <img
+                          src="/facebook.svg"
+                          alt="facebook"
+                          className="w-8"
+                        />
+                      </a>
+                    )}
+                    {footer.fields.linkedinLink && (
+                      <a href={footer.fields.linkedinLink} target="_blank">
+                        <img
+                          src="/linkedin.svg"
+                          alt="linkedin"
+                          className="w-8"
+                        />
+                      </a>
+                    )}
+                    {footer.fields.instagramLink && (
+                      <a
+                        href="https://www.instagram.com/superwizjaps/"
+                        target="_blank"
+                      >
+                        <img src="/instagram1.svg" className="w-8" />
+                      </a>
+                    )}
                   </div>
                 </div>
-                {/* <div className="mb-6 w-full md:w-1/2 xl:w-1/3 px-3">
-                  <h5 className="mb-4 font-bold">Bezpieczny kontakt</h5>
-                  <p className="leading-loose my-0">Aneta Zborowska</p>
-                  <p className="leading-loose my-0">osobazaufania@ptsps.pl </p>
-                  <p className="leading-loose my-0">+48 732 988 806</p>
-                </div> */}
+                {footer.fields.IIIColumnTitle && (
+                  <div className="mb-6 w-full md:w-1/2 xl:w-1/3 px-3">
+                    {/* <h5 className="mb-4 font-bold">Bezpieczny kontakt</h5>
+                <p className="leading-loose my-0">Aneta Zborowska</p>
+                <p className="leading-loose my-0">osobazaufania@ptsps.pl </p>
+                <p className="leading-loose my-0">+48 732 988 806</p> */}
+                    <h5 className="mb-4 font-bold">
+                      {footer.fields.IIIColumnTitle}
+                    </h5>
+                    <div>
+                      {documentToReactComponents(footer.fields.IIIColumnBody)}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
