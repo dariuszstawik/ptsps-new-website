@@ -10,6 +10,11 @@ async function getContentfulContent() {
   return resContent.items;
 }
 
+export const metadata = {
+  title: "Biblioteka | PTSPS",
+  description: "Publikacje związane z superwizją pracy socjalnej",
+};
+
 export default async function BibliotekaPage() {
   const content = await getContentfulContent();
 

@@ -4,6 +4,12 @@ import ParagraphWithImageOnTheLeft from "@/components/global-components/paragrap
 import ParagraphWithImageOnTheRight from "@/components/global-components/paragraph-with-image-on-the-right";
 import SectionTitle from "@/components/global-components/section-title";
 
+export const metadata = {
+  title: "Projekty | PTSPS",
+  description:
+    "Projekty realizowane w ramach Polskiego Towarzystwa Superwizji Pracy Socjalnej",
+};
+
 export default function Projekty() {
   return (
     <div>

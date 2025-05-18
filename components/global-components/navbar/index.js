@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 lg:flex justify-between items-center px-10 xl:px-16  top-0 left-0 z-50 hidden">
+      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 xl:flex justify-between items-center px-10 xl:px-16  top-0 left-0 z-50 hidden">
         <Logo closeMobileMenu={closeMobileMenu} onCLick={handleRefresh} />
         <div className="pl-8 w-full flex justify-end items-center gap-4 h-28">
           <NavigationMenu>
@@ -124,7 +124,7 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="ml-10 gap-2 hidden xl:flex">
+        <div className="ml-10 gap-2 hidden 2xl:flex">
           {/* <Facebook className="text-white bg-primaryBlue rounded w-10 h-10 p-2" />
           <Linkedin className="text-white bg-primaryBlue rounded w-10 h-10 p-2" /> */}
           <div className="w-12 h-12 p-2 shrink-0">
@@ -165,14 +165,14 @@ const Navbar = () => {
         />
       </div>
 
-      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-10 lg:px-16 py-4  top-0 left-0 z-50 lg:hidden">
+      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-10 lg:px-16 py-4  top-0 left-0 z-50 xl:hidden">
         <div className="navbar bg-base-100">
           <div className="navbar-start flex">
             <div className="dropdown">
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden"
+                className="btn btn-ghost xl:hidden"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

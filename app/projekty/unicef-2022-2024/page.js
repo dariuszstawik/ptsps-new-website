@@ -5,6 +5,12 @@ import SideMenu from "@/components/global-components/side-menu";
 import SingleArticle from "@/components/global-components/single-article";
 import { Check } from "lucide-react";
 
+export const metadata = {
+  title: "Projekt Unicef 2022-2024 | PTSPS",
+  description:
+    "Projekt Unicef 2022-2024 realizowany przez Polskie Towarzystwo Superwizji Pracy Socjalnej.",
+};
+
 export default function Unicef20222024() {
   return (
     <div>

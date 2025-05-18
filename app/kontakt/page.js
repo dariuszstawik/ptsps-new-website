@@ -20,6 +20,12 @@ async function getContentfulContent() {
   };
 }
 
+export const metadata = {
+  title: "Kontakt | PTSPS",
+  description:
+    "Skontaktuj się z Polskim Towarzystwem Superwizji Pracy Socjalnej",
+};
+
 export default async function Kontakt() {
   const content = await getContentfulContent();
   const contact = content.contact;

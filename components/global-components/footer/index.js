@@ -35,7 +35,7 @@ export default async function Footer() {
                 {/* <div className="bg-slate-100 p-4 rounded mb-6 flex mr-auto">
                   <Logo className="mt-4" />
                 </div> */}
-                <h1 className="pb-4">PTSPS</h1>
+                <h2 className="text-4xl lg:text-5xl pb-4">PTSPS</h2>
                 <div>
                   <div>
                     {footer.fields.description}{" "}

@@ -12,6 +12,16 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const supervisionArticle = await getContentfulArticle(slug);
+
+  return {
+    title: `${supervisionArticle.fields.title || "Superwizja"} | PTSPS`,
+    description: supervisionArticle.fields.lead || "",
+  };
+}
+
 async function getContentfulArticle(slug) {
   const resArticles = await client.getEntries({
     content_type: "supervisionArticle",
@@ -37,7 +47,7 @@ export default async function SupervisionArticle({ params }) {
 
   return (
     <div>
-      <PageHeader>Superwizja</PageHeader>
+      <PageHeader isH2>Superwizja</PageHeader>
       <section className="grid grid-cols-1 gap-1 lg:grid-cols-3 lg:gap-8 mb-10">
         <div className="col-span-2">
           <SingleArticle

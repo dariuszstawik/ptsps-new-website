@@ -48,7 +48,7 @@ const SingleArticle = ({
                   ? contentfulImg.fields.file.description
                   : ""
               }
-              style={{ width: "600px", height: "440px", objectFit: "cover" }}
+              style={{ width: "100%", objectFit: "cover" }}
               className="rounded"
             />
           )}

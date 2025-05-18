@@ -3,6 +3,12 @@ import SideMenu from "@/components/global-components/side-menu";
 import SingleArticle from "@/components/global-components/single-article";
 import { TeamSection } from "@/components/organizacja-page/team-section";
 
+export const metadata = {
+  title: "Projekt Unicef 2022-2024 | PTSPS",
+  description:
+    "Projekt Unicef 2022-2024 realizowany przez Polskie Towarzystwo Superwizji Pracy Socjalnej.",
+};
+
 export default function ZalozeniaProjektu() {
   return (
     <div>

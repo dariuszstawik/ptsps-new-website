@@ -11,6 +11,11 @@ async function getContentfulContent() {
   return resContent.items[0];
 }
 
+export const metadata = {
+  title: "Historia | PTSPS",
+  description: "Historia Polskiego Towarzystwa Superwizji Pracy Socjalnej",
+};
+
 export default async function HistoriaPage() {
   const content = await getContentfulContent();
 

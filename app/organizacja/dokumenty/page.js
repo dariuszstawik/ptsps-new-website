@@ -16,6 +16,12 @@ async function getContentfulContent() {
   return resContent.items;
 }
 
+export const metadata = {
+  title: "Dokumenty | PTSPS",
+  description:
+    "Dokumenty związane z działanią Polskiego Towarzystwa SUperwizji Pracy Socjalnej",
+};
+
 export default async function DokumentyPage() {
   const documents = await getContentfulContent();
 

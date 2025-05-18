@@ -23,6 +23,12 @@ async function getContentfulContent() {
     komisjaEtyczna: reskomisjaEtyczna.items,
   };
 }
+
+export const metadata = {
+  title: "Ludzie organizacji | PTSPS",
+  description: "Poznaj zespół Polskiego Towarzystwa Superwizji Pracy Socjalnej",
+};
+
 export default async function LudzieOrganiacji() {
   const content = await getContentfulContent();
 

@@ -12,6 +12,12 @@ async function getContentfulContent() {
   return resAbout.items[0];
 }
 
+export const metadata = {
+  title: "O nas | PTSPS",
+  description:
+    "Polskie Towarzystwo Superwizji Pracy Socjalnej organizacją pozarządową działającą od 2015 roku na rzecz profesjonalizacji pomocy społecznej.",
+};
+
 export default async function oNas() {
   const about = await getContentfulContent();
 

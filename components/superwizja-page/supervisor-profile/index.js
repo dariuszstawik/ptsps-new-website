@@ -30,9 +30,9 @@ const SupervisorProfile = ({
           />
         </div>
         <div className="flex flex-col pb-2 ">
-          <p className="font-semibold text-4xl text-primaryBlue">
+          <h1 className="font-semibold text-4xl text-primaryBlue">
             {supervisor.fields.name}
-          </p>
+          </h1>
           <p className="flex gap-2">
             <MapPin className="text-primaryBlue w-5" />
             {supervisor.fields.city}
@@ -74,10 +74,6 @@ const SupervisorProfile = ({
           {documentToReactComponents(supervisor.fields.description)}
         </div>
       </div>
-      <article>
-        {/* <p className="font-bold">{lead}</p> */}
-        {/* <div className="text-base leading-relaxed my-4 ">{children}</div> */}
-      </article>
     </section>
   );
 };

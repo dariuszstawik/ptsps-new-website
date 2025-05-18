@@ -1,3 +1,4 @@
+import BlogCard from "@/components/global-components/blog-card";
 import Footer from "@/components/global-components/footer";
 import FullwidthParagraphWithImageOnLeft from "@/components/global-components/fullwidth-paragraph-with-Image-on-left";
 import ParagraphWithImageOnTheLeft from "@/components/global-components/paragraph-with-image-on-the-left";
@@ -8,9 +9,10 @@ import CounterSection from "@/components/main-page/counter-section";
 import HeroSection from "@/components/main-page/hero-section";
 import HeroSliderSection from "@/components/main-page/hero-slider-section";
 import LogoCarousel from "@/components/main-page/logo-carousel";
-import NewsCard from "@/components/main-page/news-card";
+
 import ProjectsSection from "@/components/main-page/projects-section";
 import Testimonials from "@/components/main-page/testimonials";
+import NewsList from "@/components/news-list";
 import { TeamSection } from "@/components/organizacja-page/team-section";
 import SupervisorsMap from "@/components/superwizja-page/supervisors-map";
 import { client } from "@/lib/contentful/client";
@@ -58,31 +60,28 @@ async function getContentfulContent() {
     content_type: "testimonials",
   });
 
+  const resNewsPosts = await client.getEntries({
+    content_type: "news",
+  });
+
   return {
     slider: resSlider.items,
     blueSection: resBlueSection.items[0],
     graySection: resGraySection.items[0],
     logos: resLogos.items,
     testimonials: resTestimonials.items,
+    newsPosts: resNewsPosts.items,
   };
 }
 
 export default async function Home() {
-  // const slider = (await getContentfulContent()).slider;
-  // const blueSection = (await getContentfulContent()).blueSection;
-  // const graySection = (await getContentfulContent()).graySection;
-
   const contentfulContent = await getContentfulContent();
   const slider = contentfulContent.slider;
   const blueSection = contentfulContent.blueSection;
   const graySection = contentfulContent.graySection;
   const logos = contentfulContent.logos;
   const testimonials = contentfulContent.testimonials;
-
-  console.log("---------");
-  console.log(blueSection);
-  console.log(graySection);
-  console.log(slider);
+  const newsPosts = contentfulContent.newsPosts;
 
   return (
     <div>
@@ -173,8 +172,19 @@ export default async function Home() {
           </ParagraphWithImageOnTheLeft>
         </div>
       </section>
+
+      <section className="p-16 pt-20 pb-12 overflow-x-hidden space-y-20">
+        <SectionTitle>Aktualności</SectionTitle>
+        <NewsList newsPosts={newsPosts} isOnHomepage />
+      </section>
+
       <section className="p-16 pt-20 pb-12 overflow-x-hidden">
         <SectionTitle>Współpraca</SectionTitle>
+
+        {/* <BlogCard
+          title="Nowoczesne superwizje pracy socjalnej"
+          img="onas3.jpg"
+        /> */}
         <LogoCarousel logos={logos} />
       </section>
     </div>

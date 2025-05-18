@@ -10,15 +10,21 @@ async function getContentfulContent() {
   return resContent.items;
 }
 
+export const metadata = {
+  title: "Baza superwizorów pracy socjalnej | PTSPS",
+  description:
+    "Certyfikowani superwizorzy pracy socjalnej. Znajdź superwizora w swojej okolicy!",
+};
+
 export default async function ListaSuperwizorow() {
   const supervisors = await getContentfulContent();
 
   return (
     <div>
-      <PageHeader>Lista superwizorów</PageHeader>
+      <PageHeader>Baza superwizorów pracy socjalnej</PageHeader>
       <section className="container mx-auto pb-32 pt-6">
         <div className="my-16">
-          <SectionTitle>Lista superwizorów</SectionTitle>
+          <SectionTitle>Certyfikowani superwizorzy</SectionTitle>
         </div>
         <SupervisorsMap content={supervisors} />
       </section>

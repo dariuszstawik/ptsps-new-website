@@ -3,6 +3,7 @@ export default function SectionTitle({
   isWhite,
   isAlignedLeft,
   isNotUppercase,
+  isH1,
 }) {
   return (
     <div
@@ -27,6 +28,15 @@ export default function SectionTitle({
           {" "}
           {children}
         </h3>
+      ) : isH1 ? (
+        <h1
+          className={`text-2xl lg:text-3xl uppercase font-semibold ${
+            isAlignedLeft ? "text-left" : "text-center"
+          } ${isWhite && "text-white"}`}
+        >
+          {" "}
+          {children}
+        </h1>
       ) : (
         <h2
           className={`uppercase font-semibold ${

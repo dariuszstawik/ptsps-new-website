@@ -17,6 +17,16 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const document = await getContntfulContent(slug);
+
+  return {
+    title: `${document.fields.title} | PTSPS`,
+    description: "Dokumenty Polskiego Towarzystwa Superwizji Pracy Socjalnej",
+  };
+}
+
 export default async function Document({ params }) {
   const { slug } = params;
   const document = await getContntfulContent(slug);

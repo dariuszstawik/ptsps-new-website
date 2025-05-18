@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 
 export default function Counter({ end, decimals }) {
   return (
-    <h1 className="">
+    <div className="text-4xl lg:text-5xl">
       <CountUp
         end={end}
         duration={5}
@@ -11,6 +11,6 @@ export default function Counter({ end, decimals }) {
         decimals={decimals}
         decimal=","
       />
-    </h1>
+    </div>
   );
 }

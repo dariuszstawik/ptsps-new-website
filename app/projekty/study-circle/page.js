@@ -1,9 +1,13 @@
-"use client";
 import ArticleSubtitle from "@/components/global-components/article-subtitle";
 import ArticleSubtitle2 from "@/components/global-components/article-subtitle2";
 import PageHeader from "@/components/global-components/page-header";
 import SectionSubtitle from "@/components/global-components/section-subtitle";
 import SingleArticle from "@/components/global-components/single-article";
+
+export const metadata = {
+  title: "Projekt Study Circle | PTSPS",
+  description: "Study Circle to szwedzka metoda edukacji dorosłych.",
+};
 
 export default function StudyCircle() {
   return (

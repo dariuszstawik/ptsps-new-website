@@ -7,6 +7,12 @@ const navbarData = [
   },
   {
     id: 2,
+    title: "Aktualności",
+    path: "/aktualnosci",
+    isVisible: true,
+  },
+  {
+    id: 3,
     title: "Organizacja",
     path: "/organizacja/o-nas",
     isVisible: true,
@@ -56,7 +62,7 @@ const navbarData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Projekty",
     path: "/projekty",
     isVisible: true,
@@ -95,7 +101,7 @@ const navbarData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Superwizja",
     path: "/superwizja",
     isVisible: true,
@@ -126,7 +132,7 @@ const navbarData = [
       },
       {
         id: 5,
-        title: "Lista superwizorów pracy socjalnej",
+        title: "Baza superwizorów pracy socjalnej",
         path: "/superwizja/lista-superwizorow",
         isVisible: true,
       },
@@ -140,13 +146,13 @@ const navbarData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Biblioteka",
     path: "/biblioteka",
     isVisible: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "Oferta",
     path: "/oferta",
     isVisible: false,
@@ -172,7 +178,7 @@ const navbarData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Kontakt",
     path: "/kontakt",
     isVisible: true,
