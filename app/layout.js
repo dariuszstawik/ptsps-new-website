@@ -16,6 +16,9 @@ export const metadata = {
   title: "Polskie Towarzystwo Superwizji Pracy Socjalnej",
   description:
     "Misją PTSPS jest praca nad rozwojem superwizji pracy socjalnej oraz profesjonalizacja pomocy społecznej.",
+  verification: {
+    google: "12hRewapN-XkDdAQjGw1YkzxyxpObauc_IGEr2dN-II",
+  },
 };
 
 export default function RootLayout({ children }) {
