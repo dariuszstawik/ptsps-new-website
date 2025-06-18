@@ -26,11 +26,7 @@ export async function GET() {
     "/projekty",
     "/projekty/study-circle",
     "/projekty/unicef-2022-2024",
-    "/projekty/",
     "/superwizja",
-    "/superwizja/jak-sfinansowac-superwizje",
-    "/superwizja/jak-wprowadzac-superwizje-do-organizacji",
-    "/superwizja/standardy-superwizji-pracy-socjalnej",
     "/superwizja/lista-superwizorow",
   ];
 
