@@ -1,6 +1,6 @@
 import { client } from "@/lib/contentful/client";
 
-const BASE_URL = "https://ptsps.pl/"; // Podmień na swoją domenę
+const BASE_URL = "https://ptsps.pl"; // Podmień na swoją domenę
 
 export async function GET() {
   // Pobierz wszystkie typy z Contentful
