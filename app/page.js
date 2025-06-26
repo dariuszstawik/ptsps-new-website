@@ -19,26 +19,6 @@ import { client } from "@/lib/contentful/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 
-// async function getContentfulContent() {
-//   const resSlider = await client.getEntries({
-//     content_type: "slider",
-//   });
-
-//   const resBlueSection = await client.getEntries({
-//     content_type: "blueSection",
-//   });
-
-//   const resGraySection = await client.getEntries({
-//     content_type: "graySection",
-//   });
-
-//   return {
-//     slider: resSlider.items,
-//     blueSection: resBlueSection.items,
-//     graySection: resGraySection.items,
-//   };
-// }
-
 async function getContentfulContent() {
   const resBlueSection = await client.getEntries({
     content_type: "blueSection",
@@ -94,17 +74,13 @@ export default async function Home() {
 
       <div className="bg-darkBlue py-8">
         <ParagraphWithImageOnTheLeft
-          // title="Czym jest superwizja pracy socjalnej?"
           title={blueSection.fields.title ? blueSection.fields.title : ""}
-          // img="onas4.jpg"
           img={
             blueSection.fields.image
               ? blueSection.fields.image.fields.file.url
               : ""
           }
           hasBlueBackground
-          // buttonTitle={"Więcej o superwizji"}
-          // buttonLink={"/superwizja"}
           buttonTitle={
             blueSection.fields.buttonTitle ? blueSection.fields.buttonTitle : ""
           }
@@ -112,15 +88,6 @@ export default async function Home() {
             blueSection.fields.buttonLink ? blueSection.fields.buttonLink : ""
           }
         >
-          {/* Superwizja pracy socjalnej to szczególny, wieloaspektowy ogląd pracy
-          służący rozwiązaniu trudności merytorycznych i emocjonalnych
-          związanych z wykonywaniem pracy. To dwustronny proces pomagający
-          poszerzać świadomość, rozwijać umiejętności, osiągać lepsze wyniki,
-          działać poprzez rzetelną ocenę, omówienie problemów, ukierunkowaną
-          praktykę i sprzężenie zwrotne (feedback). Warunkiem powodzenia tak
-          zaplanowanego przedsięwzięcia jest zgoda uczestników superwizji na
-          ujawnienie swoich doświadczeń w pracy z ludźmi i na ich analizę (Wódz,
-          Leśniak-Berek, 2007) */}
           {documentToReactComponents(blueSection.fields.body)}
           <span className="block h-4" />
         </ParagraphWithImageOnTheLeft>

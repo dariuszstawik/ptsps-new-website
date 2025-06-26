@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const document = await getContntfulContent(slug);
 
   return {
-    title: `${document.fields.title} | PTSPS`,
+    title: `${document.fields.SeoTitle || document.fields.title} | PTSPS`,
     description: "Dokumenty Polskiego Towarzystwa Superwizji Pracy Socjalnej",
   };
 }

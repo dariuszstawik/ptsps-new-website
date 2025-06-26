@@ -11,7 +11,7 @@ async function getContentfulContent() {
 }
 
 export const metadata = {
-  title: "Baza superwizorów pracy socjalnej | PTSPS",
+  title: "Baza certyfikowanych superwizorów pracy socjalnej | PTSPS",
   description:
     "Certyfikowani superwizorzy pracy socjalnej. Znajdź superwizora w swojej okolicy!",
 };

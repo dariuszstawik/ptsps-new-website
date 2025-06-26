@@ -3,6 +3,7 @@ import { Slide } from "react-awesome-reveal";
 import SectionTitle from "../section-title";
 import Button from "../button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ParagraphWithImageOnTheLeft({
   title,
@@ -30,7 +31,7 @@ export default function ParagraphWithImageOnTheLeft({
       >
         <div>
           {contentfulImg && (
-            <img
+            <Image
               src={
                 contentfulImg?.fields.file.url
                   ? contentfulImg.fields.file.url
@@ -39,10 +40,12 @@ export default function ParagraphWithImageOnTheLeft({
               alt={
                 contentfulImg.fields.file.description
                   ? contentfulImg.fields.file.description
-                  : ""
+                  : title
               }
               style={{ width: "400px", height: "440px", objectFit: "cover" }}
               className="rounded"
+              width={contentfulImg?.fields?.file?.details?.image?.width}
+              height={contentfulImg?.fields?.file?.details?.image?.height}
             />
           )}
           {img && <img src={img} alt={alt ? alt : ""} className="rounded" />}
