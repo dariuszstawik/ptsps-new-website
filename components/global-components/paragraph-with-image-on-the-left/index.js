@@ -34,7 +34,7 @@ export default function ParagraphWithImageOnTheLeft({
             <Image
               src={
                 contentfulImg?.fields.file.url
-                  ? contentfulImg.fields.file.url
+                  ? `https://${contentfulImg.fields.file.url}`
                   : ""
               }
               alt={
@@ -42,10 +42,12 @@ export default function ParagraphWithImageOnTheLeft({
                   ? contentfulImg.fields.file.description
                   : title
               }
-              style={{ width: "400px", height: "440px", objectFit: "cover" }}
-              className="rounded"
+              // fill
+              // sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
               width={contentfulImg?.fields?.file?.details?.image?.width}
               height={contentfulImg?.fields?.file?.details?.image?.height}
+              className="rounded object-cover"
+              // priority={true}
             />
           )}
           {img && <img src={img} alt={alt ? alt : ""} className="rounded" />}

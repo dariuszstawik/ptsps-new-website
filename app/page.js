@@ -75,10 +75,8 @@ export default async function Home() {
       <div className="bg-darkBlue py-8">
         <ParagraphWithImageOnTheLeft
           title={blueSection.fields.title ? blueSection.fields.title : ""}
-          img={
-            blueSection.fields.image
-              ? blueSection.fields.image.fields.file.url
-              : ""
+          contentfulImg={
+            blueSection.fields.image ? blueSection.fields.image : ""
           }
           hasBlueBackground
           buttonTitle={
@@ -99,7 +97,6 @@ export default async function Home() {
       </section>
 
       <section className="p-10 pt-24 bg-slate-200">
-        {/* <SectionTitle>Aktualny projekt</SectionTitle> */}
         <SectionTitle>
           {graySection.fields.sectionTitle
             ? graySection.fields.sectionTitle
@@ -107,15 +104,9 @@ export default async function Home() {
         </SectionTitle>
         <div className="-mt-4">
           <ParagraphWithImageOnTheLeft
-            // title="Wsparcie rozwoju pracowników polskiego systemu pomocy społecznej"
-            // img="/unicef-logo.png"
-            // buttonTitle="Więcej o projekcie"
-            // buttonLink="/projekty/unicef-2022-2024"
             title={graySection.fields.title ? graySection.fields.title : ""}
-            img={
-              graySection.fields.image
-                ? graySection.fields.image.fields.file.url
-                : ""
+            contentfulImg={
+              graySection.fields.image ? graySection.fields.image : ""
             }
             buttonTitle={
               graySection.fields.buttonTitle
@@ -127,14 +118,6 @@ export default async function Home() {
             }
             hasSectionSubtitle
           >
-            {/* Projekt realizowany we współpracy z Biurem Reagowania na Potrzeby
-            Uchodźców UNICEF. Jest odpowiedzią na kryzys uchodźczy związany z
-            wybuchem pełnoskalowej wojny w Ukrainie. Skala migracji z Ukrainy do
-            Polski spowodowała znaczne obciążenie naszego systemu pomocy
-            społecznej i postawiła przed pracownikami pomocy społecznej nowe
-            zadania i nowe wymagania. Celem projektu jest wsparcie pracowników
-            (superwizyjne i edukacyjne), tak by mogli efektywnie pomagać osobom
-            z Ukrainy, które schroniły się w naszym kraju. */}
             {documentToReactComponents(graySection.fields.body)}
           </ParagraphWithImageOnTheLeft>
         </div>
@@ -147,11 +130,6 @@ export default async function Home() {
 
       <section className="p-16 pt-20 pb-12 overflow-x-hidden">
         <SectionTitle>Współpraca</SectionTitle>
-
-        {/* <BlogCard
-          title="Nowoczesne superwizje pracy socjalnej"
-          img="onas3.jpg"
-        /> */}
         <LogoCarousel logos={logos} />
       </section>
     </div>
