@@ -28,7 +28,7 @@ export default function HeroSliderSection({ slider }) {
       //   overflow: "hidden",
       // }}
       className="slider w-full overflow-hidden relative"
-      style={{ minHeight: "400px" }}
+      style={{ minHeight: "400px", height: "100vh" }}
     >
       <Slider {...settingsLg}>
         {slider.map((item) => (
