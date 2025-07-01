@@ -16,16 +16,19 @@ export default function HeroSliderSection({ slider }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    adaptiveHeight: false,
   };
   return (
     <div
-      className="slider"
-      style={{
-        maxWidth: "100vw",
-        width: "100%",
-        minHeight: "400px",
-        overflow: "hidden",
-      }}
+      // className="slider"
+      // style={{
+      //   maxWidth: "100vw",
+      //   width: "100%",
+      //   minHeight: "400px",
+      //   overflow: "hidden",
+      // }}
+      className="slider w-full overflow-hidden"
+      style={{ minHeight: "400px" }}
     >
       <Slider {...settingsLg}>
         {slider.map((item) => (
