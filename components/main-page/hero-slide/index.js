@@ -11,6 +11,8 @@ export default function HeroSlide({
   buttonHref,
   img,
 }) {
+  console.log("_____________________");
+  console.log(img.fields.file.details.image.width);
   return (
     <div className="w-full lg:h-screen pt-28 pr-0 flex flex-col lg:flex-row bg-darkBlue">
       <div className="w-full lg:w-2/5 h-full flex flex-col justify-center items-start gap-10 px-10 lg:pl-28 lg:pr-20 py-10">
@@ -31,14 +33,24 @@ export default function HeroSlide({
         </Link>
         {/* </Slide> */}
       </div>
-      <div className="w-full lg:w-3/5 h-full flex shrink-0">
-        {/* <img src={img} alt="" className="object-cover w-full" /> */}
+      {/* <div className="w-full lg:w-3/5 h-full flex shrink-0">
+        <img src={img} alt="" className="object-cover w-full" />
         <Image
           src={`https:${img.fields.file.url}`}
           alt={img.fields.file.description || title || ""}
           width={img.fields.file.details.image.width}
           height={img.fields.file.details.image.height}
           className="object-cover w-full h-auto"
+          priority
+          sizes="(max-width: 1024px) 100vw, 60vw"
+        />
+      </div> */}
+      <div className="w-full lg:w-3/5 aspect-[2.4/1] relative shrink-0">
+        <Image
+          src={`https:${img.fields.file.url}`}
+          alt={img.fields.file.description || title || ""}
+          fill
+          className="object-cover"
           priority
           sizes="(max-width: 1024px) 100vw, 60vw"
         />
