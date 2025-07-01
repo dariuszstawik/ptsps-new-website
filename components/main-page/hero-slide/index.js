@@ -1,5 +1,6 @@
 import Button from "@/components/global-components/button";
 import SectionTitle from "@/components/global-components/section-title";
+import Image from "next/image";
 import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
 
@@ -31,7 +32,16 @@ export default function HeroSlide({
         {/* </Slide> */}
       </div>
       <div className="w-full lg:w-3/5 h-full flex shrink-0">
-        <img src={img} alt="" className="object-cover w-full" />
+        {/* <img src={img} alt="" className="object-cover w-full" /> */}
+        <Image
+          src={`https:${img.fields.file.url}`}
+          alt={img.fields.file.description || title || ""}
+          width={img.fields.file.details.image.width}
+          height={img.fields.file.details.image.height}
+          className="object-cover w-full h-auto"
+          priority
+          sizes="(max-width: 1024px) 100vw, 60vw"
+        />
       </div>
     </div>
   );

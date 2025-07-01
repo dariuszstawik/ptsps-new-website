@@ -34,7 +34,8 @@ export default function HeroSliderSection({ slider }) {
             title={item.fields.title}
             buttonTitle={item.fields.buttonTitle}
             buttonHref={item.fields.buttonLink}
-            img={item.fields.image.fields.file.url}
+            // img={item.fields.image.fields.file.url}
+            img={item.fields.image ? item.fields.image : ""}
           >
             {item.fields.body}
           </HeroSlide>
