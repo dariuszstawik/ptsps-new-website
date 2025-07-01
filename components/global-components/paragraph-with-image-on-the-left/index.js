@@ -34,7 +34,7 @@ export default function ParagraphWithImageOnTheLeft({
             <Image
               src={
                 contentfulImg?.fields.file.url
-                  ? `https://${contentfulImg.fields.file.url}`
+                  ? `https:${contentfulImg.fields.file.url}`
                   : ""
               }
               alt={
