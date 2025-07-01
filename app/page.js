@@ -65,7 +65,7 @@ export default async function Home() {
 
   return (
     <div>
-      {/* <div
+      <div
         style={{
           maxWidth: "100vw",
           width: "100%",
@@ -74,7 +74,7 @@ export default async function Home() {
         }}
       >
         <HeroSliderSection slider={slider} />
-      </div> */}
+      </div>
       <div className="mb-32">
         <AboutSection />
         <CounterSection />
