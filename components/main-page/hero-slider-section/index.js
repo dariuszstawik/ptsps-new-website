@@ -18,7 +18,15 @@ export default function HeroSliderSection({ slider }) {
     autoplay: true,
   };
   return (
-    <div className="slider">
+    <div
+      className="slider"
+      style={{
+        maxWidth: "100vw",
+        width: "100%",
+        minHeight: "400px",
+        overflow: "hidden",
+      }}
+    >
       <Slider {...settingsLg}>
         {slider.map((item) => (
           <HeroSlide

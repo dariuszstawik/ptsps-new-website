@@ -65,8 +65,16 @@ export default async function Home() {
 
   return (
     <div>
-      <HeroSliderSection slider={slider} />
-
+      {/* <div
+        style={{
+          maxWidth: "100vw",
+          width: "100%",
+          minHeight: "400px",
+          overflow: "hidden",
+        }}
+      >
+        <HeroSliderSection slider={slider} />
+      </div> */}
       <div className="mb-32">
         <AboutSection />
         <CounterSection />
