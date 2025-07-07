@@ -38,7 +38,7 @@ export default function HeroSlide({
           alt={img.fields.file.description || title || ""}
           width={img.fields.file.details.image.width}
           height={img.fields.file.details.image.height}
-          className="object-cover w-full h-auto"
+          className="object-cover w-full h-[300px] lg:h-full"
           priority
           sizes="(max-width: 1024px) 100vw, 60vw"
         />
