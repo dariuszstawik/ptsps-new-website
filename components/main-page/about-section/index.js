@@ -10,14 +10,12 @@ export default function AboutSection() {
 
   return (
     <section className="lg:mx-6">
-      {/* <SectionTitle>O nas</SectionTitle> */}
       <SectionTitle isH1>
         Polskie Towarzystwo Superwizji Pracy Socjalnej
       </SectionTitle>
       <div className="flex flex-col md:flex-row gap-10 mt-16 mb-8">
         <div className="w-full md:w-1/2 px-8 py-10 bg-darkBlue text-white rounded-lg flex flex-col gap-6">
           <Slide direction="up" triggerOnce>
-            {/* <Milestone /> */}
             <Lightbulb className="w-12 h-12 text-primaryBlue" />
             <h4 className="text-white font-semibold">
               Misją PTSPS jest propagowanie idei superwizji pracy socjalnej

@@ -19,6 +19,7 @@ export default function BlogCard({ title, content, slug, img, href }) {
             // src="dobremiejsce008.jpg"
             src={img ? `https:${img.fields.file.url}` : ""}
             className="object-cover h-48  lg:h-48 xl:h-56 w-full"
+            alt={img?.fields?.description || title || ""}
           />
           {/* <div className=" h-6 bg-orange" /> */}
         </div>

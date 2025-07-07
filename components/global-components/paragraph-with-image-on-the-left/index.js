@@ -37,11 +37,7 @@ export default function ParagraphWithImageOnTheLeft({
                   ? `https:${contentfulImg.fields.file.url}`
                   : ""
               }
-              alt={
-                contentfulImg.fields.file.description
-                  ? contentfulImg.fields.file.description
-                  : title
-              }
+              alt={contentfulImg.fields.file.description || title || ""}
               // fill
               // sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
               width={contentfulImg?.fields?.file?.details?.image?.width}
@@ -50,24 +46,26 @@ export default function ParagraphWithImageOnTheLeft({
               // priority={true}
             />
           )}
-          {img && <img src={img} alt={alt ? alt : ""} className="rounded" />}
+          {img && (
+            <img src={img} alt={alt || title || ""} className="rounded" />
+          )}
 
           {isOnAboutPage && (
             <div className="grid grid-cols-2 gap-10">
               <img
                 className="object-cover w-full col-span-2 rounded shadow-lg"
                 src="/grupa-samorozwojowa.jpg"
-                alt=""
+                alt="grupa samorozwojowa"
               />
               <img
                 className="object-cover w-full rounded shadow-lg"
                 src="/onas3.jpg"
-                alt=""
+                alt="zespół projektowy"
               />
               <img
                 className="object-cover w-full rounded shadow-lg"
                 src="/onas4.jpg"
-                alt=""
+                alt="konferencja"
               />
             </div>
           )}

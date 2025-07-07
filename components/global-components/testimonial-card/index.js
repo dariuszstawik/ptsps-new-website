@@ -26,7 +26,7 @@ export default function TestimonialCard({ name, title, img, children }) {
           <img
             className="h-16 w-16 rounded-full object-cover ml-4 lg:ml-0 mt-4 lg:mt-0"
             src={img}
-            alt=""
+            alt={name || "osoba"}
           />
 
           <div className="pl-4">
