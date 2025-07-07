@@ -31,7 +31,7 @@ export default function HeroSlide({
         </Link>
         {/* </Slide> */}
       </div>
-      <div className="w-full lg:w-3/5 h-[300px] lg:h-full flex shrink-0">
+      <div className="w-full lg:w-3/5 h-[300px] lg:h-full flex shrink-0 overflow-hidden">
         {/* <img src={img} alt="" className="object-cover w-full" /> */}
         <Image
           src={`https:${img.fields.file.url}`}
