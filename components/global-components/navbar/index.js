@@ -165,7 +165,7 @@ const Navbar = () => {
         />
       </div>
 
-      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-10 lg:px-16 py-4  top-0 left-0 z-50 xl:hidden">
+      <div className="bg-white border-b-2 border-b-gray-100 text-xl antialiased fixed w-screen h-28 flex justify-between items-center px-4 lg:px-16 py-4  top-0 left-0 z-50 xl:hidden">
         <div className="navbar bg-base-100">
           <div className="navbar-start flex">
             <div className="dropdown">
@@ -225,7 +225,7 @@ const Navbar = () => {
                 )}
               </ul>
             </div>
-            <div className="mx-6 w-64 shrink-0">
+            <div className="mx-4 w-48 lg:w-64 shrink-0">
               <Logo />
             </div>
           </div>
