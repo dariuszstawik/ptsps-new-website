@@ -9,7 +9,7 @@ export default function AboutSection() {
   let nbsp = "\u00A0";
 
   return (
-    <section className="mx-6">
+    <section className="lg:mx-6">
       {/* <SectionTitle>O nas</SectionTitle> */}
       <SectionTitle isH1>
         Polskie Towarzystwo Superwizji Pracy Socjalnej

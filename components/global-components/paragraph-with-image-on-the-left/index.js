@@ -73,7 +73,7 @@ export default function ParagraphWithImageOnTheLeft({
           )}
         </div>
       </Slide>
-      <div className="w-full lg:w-1/2 mx-6 pr-6 pt-8 lg:pt-0 lg:pr-0 lg:ml-16 lg:mr-16 flex flex-col gap-0">
+      <div className="w-full lg:w-1/2  pr-6 pt-8 lg:pt-0 lg:pr-0 lg:ml-16 lg:mr-16 flex flex-col gap-0">
         <SectionTitle
           isAlignedLeft
           isWhite={hasBlueBackground}

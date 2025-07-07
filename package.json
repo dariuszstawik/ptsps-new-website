@@ -14,6 +14,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "contentful": "^10.6.14",
+    "keen-slider": "^6.8.6",
     "lucide-react": "^0.299.0",
     "next": "13.5.6",
     "react": "^18",
@@ -22,6 +23,7 @@
     "react-dom": "^18",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.10",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7"
   },

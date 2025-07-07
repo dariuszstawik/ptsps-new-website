@@ -14,7 +14,7 @@ export default function NewsList({ newsPosts, isOnHomepage }) {
   };
   return (
     <>
-      <ul className="grid grid-cols-1 gap-8 xl:grid-cols-2 mx-auto px-10 xl:px-28 list-none">
+      <ul className="grid grid-cols-1 gap-8 xl:grid-cols-2 mx-auto px-8 xl:px-28 list-none">
         {newsPosts &&
           newsPosts.slice(0, maxAmount).map((item, i) => {
             return (

@@ -6,8 +6,8 @@ import Arrow from "../arrow";
 export default function BlogCard({ title, content, slug, img, href }) {
   return (
     <Fade direction="bottom" delay="30" triggerOnce>
-      <div className="max-w-xl mx-auto transition duration-300 transform bg-slate-200 border rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center flex">
-        <div className=" relative w-1/2">
+      <div className="max-w-xl mx-auto transition duration-300 transform bg-slate-200 border rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center flex flex-col lg:flex-row">
+        <div className=" relative lg:w-1/2">
           {/* <Image
           className="object-cover h-48 rounded-t lg:h-48 xl:h-56"
           src={img ? `https:${img.fields.file.url}` : ""}
@@ -22,7 +22,7 @@ export default function BlogCard({ title, content, slug, img, href }) {
           />
           {/* <div className=" h-6 bg-orange" /> */}
         </div>
-        <div className="w-1/2 flex flex-col justify-between items-start px-6 py-8  rounded-b sm:px-8">
+        <div className="lg:w-1/2 flex flex-col justify-between items-start px-6 py-8  rounded-b sm:px-8">
           <div className="flex flex-col justify-start items-start">
             <h3 className="mb-2 text-lg text-left font-semibold leading-none md:text-xl">
               {title}

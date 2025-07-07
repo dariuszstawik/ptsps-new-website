@@ -91,12 +91,12 @@ export default async function Home() {
         </ParagraphWithImageOnTheLeft>
       </div>
 
-      <section className="p-16 py-20">
+      <section className="p-6 lg:py-16 py-20">
         <SectionTitle>Okiem ekspertów i praktyków</SectionTitle>
         <TestimonialsCarousel testimonials={testimonials} />
       </section>
 
-      <section className="p-10 pt-24 bg-slate-200">
+      <section className="p-6 lg:py-16 pt-24 bg-slate-200">
         <SectionTitle>
           {graySection.fields.sectionTitle
             ? graySection.fields.sectionTitle
@@ -123,7 +123,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="p-16 pt-20 pb-12 overflow-x-hidden space-y-20">
+      <section className="p-6 lg:py-16 pt-20 pb-12 overflow-x-hidden space-y-20">
         <SectionTitle>Aktualności</SectionTitle>
         <NewsList newsPosts={newsPosts} isOnHomepage />
       </section>
