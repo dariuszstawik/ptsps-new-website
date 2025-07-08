@@ -155,7 +155,7 @@ const Navbar = () => {
           </div>
           <div className="w-12 h-12 p-2 shrink-0">
             <a href="https://www.instagram.com/superwizjaps/" target="_blank">
-              <img src="/instagram1.svg" className="w-8" />
+              <img src="/instagram1.svg" alt="instagram" className="w-8" />
             </a>
           </div>
         </div>

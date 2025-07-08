@@ -75,7 +75,11 @@ export default async function Footer() {
                         href="https://www.instagram.com/superwizjaps/"
                         target="_blank"
                       >
-                        <img src="/instagram1.svg" className="w-8" />
+                        <img
+                          src="/instagram1.svg"
+                          alt="instagram"
+                          className="w-8"
+                        />
                       </a>
                     )}
                   </div>
