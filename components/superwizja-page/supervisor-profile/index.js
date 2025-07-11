@@ -57,6 +57,7 @@ const SupervisorProfile = ({
           <div className="lg:hidden mt-4">
             <img
               src={supervisor.fields.image?.fields.file.url}
+              alt="Zdjęcie superwizora"
               className="w-full max-w-[440px] rounded object-cover border-b-darkBlue border-b-8"
             />
           </div>
