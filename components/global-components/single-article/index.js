@@ -43,16 +43,14 @@ const SingleArticle = ({
                   ? contentfulImg.fields.file.url
                   : ""
               }
-              alt={
-                contentfulImg.fields.file.description
-                  ? contentfulImg.fields.file.description
-                  : ""
-              }
+              alt={contentfulImg.fields.file.description || title || ""}
               style={{ width: "100%", objectFit: "cover" }}
               className="rounded"
             />
           )}
-          {img && <img src={img} alt={alt ? alt : ""} className="rounded" />}
+          {img && (
+            <img src={img} alt={alt || title || ""} className="rounded" />
+          )}
 
           {hasSlider && <ImageSlider />}
         </div>

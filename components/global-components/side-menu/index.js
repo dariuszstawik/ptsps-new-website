@@ -17,7 +17,7 @@ export default function SideMenu({
 
   return (
     <div className={`mb-10 mt-6 flex flex-col gap-6 ${className}`}>
-      {img && <img src={img} alt={alt ? alt : ""} className="" />}
+      {img && <img src={img} alt={alt ? alt : "logo Unicef"} className="" />}
 
       <div className="-mb-2">
         <SectionSubtitle isAlignedLeft>{title}</SectionSubtitle>

@@ -4,7 +4,7 @@ export default function TeamMember({ name, role, children, img }) {
       <img
         className="object-cover w-40 h-40 rounded-full shadow"
         src={img}
-        alt="Person"
+        alt="Zdjęcie profilowe"
       />
       <div className="flex flex-col justify-center mt-2">
         <p className="text-lg font-bold">{name}</p>

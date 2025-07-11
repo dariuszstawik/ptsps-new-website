@@ -9,7 +9,7 @@ export default function LibraryCard({ title, img, file }) {
           src={img ? `https:${img.fields.file.url}` : ""}
           width={img?.fields?.file?.details?.image?.width}
           height={img?.fields?.file?.details?.image?.height}
-          alt={img?.fields?.description ? img.fields.description : ""}
+          alt={img?.fields?.description || "okładka"}
         />
 
         <div class="p-4 sm:p-6">

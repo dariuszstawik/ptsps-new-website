@@ -26,6 +26,7 @@ const SupervisorProfile = ({
         <div className="shrink-0 bg-gray-200 hidden lg:block">
           <img
             src={supervisor.fields.image?.fields.file.url}
+            alt="Zdjęcie superwizora"
             className="w-[330px] h-[450px] xl:w-[440px] xl:h-[600px] rounded object-cover border-b-darkBlue border-b-8"
           />
         </div>
