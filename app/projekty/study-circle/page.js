@@ -3,6 +3,7 @@ import ArticleSubtitle2 from "@/components/global-components/article-subtitle2";
 import PageHeader from "@/components/global-components/page-header";
 import SectionSubtitle from "@/components/global-components/section-subtitle";
 import SingleArticle from "@/components/global-components/single-article";
+import Link from "next/link";
 
 export const metadata = {
   title: "Projekt Study Circle | PTSPS",
@@ -92,7 +93,7 @@ export default function StudyCircle() {
           superwizja pracy socjalnej. Nasz samouczący się krąg roboczo
           nazwaliśmy grupą samorozwojową typu Study Circle.
         </p>
-        <p>
+        <div>
           Samorozwojowa grupa adresowana jest dla wszystkich superwizorów,
           którzy są już praktykami, ale też jest propozycją dla osób, które
           zaczynają swoją przygodę z superwizją. Uczestnikami grupy
@@ -101,9 +102,12 @@ export default function StudyCircle() {
           Grupa przeznaczona jest dla tych, którzy chcą świadomie dbać o swój
           profesjonalny warsztat pracy i pogłębiać wiedzę z zakresu superwizji.
           Dla osób, dla których ważny jest rozwój własny, ale także rozwój osób
-          superwizowanych, i postępowanie zgodne z kodeksem etycznym superwizora
-          pracy socjalnej.
-        </p>
+          superwizowanych, i postępowanie zgodne z{" "}
+          <Link href="/organizacja/dokumenty/kodeks-etyczny-osoby-superwizujacej-prace-socjalna-ptsps">
+            kodeksem etycznym superwizora pracy socjalnej
+          </Link>
+          .
+        </div>
         <p>
           Samorozwojowa grupa typu Study Circle ma na celu analizę pracy
           własnej, wymianę doświadczeń oraz refleksję nad profesjonalnym

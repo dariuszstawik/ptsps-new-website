@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Timeline() {
   return (
     <div className="mb-28">
@@ -251,10 +253,15 @@ export default function Timeline() {
               </svg>
             </div>
             <div className="timeline-end timeline-box my-6">
-              Przyjęliśmy opracowany przez członków PTSPS Kodeks Etyczny Osoby
-              Superwizującej Pracę Socjalną, zawarliśmy porozumienie o
-              współpracy z Polską Federacją Związkową Pracowników Socjalnych i
-              Pomocy Społecznej.
+              Przyjęliśmy opracowany przez członków PTSPS{" "}
+              <Link
+                className="text-primaryBlue"
+                href="/organizacja/dokumenty/kodeks-etyczny-osoby-superwizujacej-prace-socjalna-ptsps"
+              >
+                Kodeks Etyczny Osoby Superwizującej Pracę Socjalną
+              </Link>
+              , zawarliśmy porozumienie o współpracy z Polską Federacją
+              Związkową Pracowników Socjalnych i Pomocy Społecznej.
             </div>
             <hr />
           </li>
