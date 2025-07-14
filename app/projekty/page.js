@@ -3,6 +3,7 @@ import PageHeader from "@/components/global-components/page-header";
 import ParagraphWithImageOnTheLeft from "@/components/global-components/paragraph-with-image-on-the-left";
 import ParagraphWithImageOnTheRight from "@/components/global-components/paragraph-with-image-on-the-right";
 import SectionTitle from "@/components/global-components/section-title";
+import Link from "next/link";
 
 export const metadata = {
   title: "Projekty | PTSPS",

@@ -88,7 +88,8 @@ export default function Timeline() {
               rzecz upowszechniania i profesjonalizacji superwizji pracy
               socjalnej oraz profesjonalizacji pomocy społecznej w Polsce. Naszą
               organizację tworzą przede wszystkim ludzie na co dzień zajmujący
-              się z zaangażowaniem superwizją pracy socjalnej – a więc
+              się z zaangażowaniem{" "}
+              <Link href="/">superwizją pracy socjalnej</Link> – a więc
               superwizorzy praktycy, trenerzy oraz teoretycy pracy socjalnej i
               superwizji.
             </div>

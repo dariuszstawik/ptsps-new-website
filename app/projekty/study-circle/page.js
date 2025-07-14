@@ -88,11 +88,11 @@ export default function StudyCircle() {
           zdobyć wiedzę na dany temat i wypracować nowe pomysły.
         </p>
         <ArticleSubtitle>Nasz samouczący się krąg</ArticleSubtitle>
-        <p>
-          Obszarem zainteresowania naszego Study Circle jest praca socjalna i
-          superwizja pracy socjalnej. Nasz samouczący się krąg roboczo
-          nazwaliśmy grupą samorozwojową typu Study Circle.
-        </p>
+        <div>
+          Obszarem zainteresowania naszego Study Circle jest praca socjalna i{" "}
+          <Link href="/">superwizja pracy socjalnej</Link>. Nasz samouczący się
+          krąg roboczo nazwaliśmy grupą samorozwojową typu Study Circle.
+        </div>
         <div>
           Samorozwojowa grupa adresowana jest dla wszystkich superwizorów,
           którzy są już praktykami, ale też jest propozycją dla osób, które
