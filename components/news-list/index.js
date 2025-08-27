@@ -7,7 +7,7 @@ import Button from "../global-components/button";
 export default function NewsList({ newsPosts, isOnHomepage }) {
   //   const newsAmount = 2;
 
-  const [maxAmount, setMaxAmount] = useState(2);
+  const [maxAmount, setMaxAmount] = useState(4);
 
   const increaseMaxAmount = () => {
     setMaxAmount(maxAmount + 2);

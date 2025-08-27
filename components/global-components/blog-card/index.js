@@ -26,7 +26,7 @@ export default function BlogCard({ title, content, slug, img, href }) {
         <div className="lg:w-1/2 flex flex-col justify-between items-start px-6 py-8  rounded-b sm:px-8">
           <div className="flex flex-col justify-start items-start">
             <h3 className="mb-2 text-lg text-left font-semibold leading-none md:text-xl">
-              {title}
+              <Link href={href || ""}>{title}</Link>
             </h3>
           </div>
           <button className="relative font-medium text-orange before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-green-800 before:transition hover:before:scale-100">
